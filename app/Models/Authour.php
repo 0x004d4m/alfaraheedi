@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class Authour extends Model
 {
     use CrudTrait, HasFactory, SoftDeletes, CrudTrait;
 
@@ -17,19 +17,13 @@ class Product extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'products';
+    protected $table = 'authours';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
     protected $fillable = [
         'name_ar',
         'name_en',
-        'description_ar',
-        'description_en',
-        'price',
-        'image',
-        'category_id',
-        'authour_id',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -45,16 +39,6 @@ class Product extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function authour()
-    {
-        return $this->belongsTo(Authour::class);
-    }
 
     /*
     |--------------------------------------------------------------------------

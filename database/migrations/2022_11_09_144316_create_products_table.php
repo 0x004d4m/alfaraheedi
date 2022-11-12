@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->json('images');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('authour_id')->nullable();
+            $table->foreign('authour_id')->references('id')->on('authours');
             $table->timestamps();
             $table->softDeletes();
         });

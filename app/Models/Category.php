@@ -25,6 +25,7 @@ class Category extends Model
         'name_ar',
         'name_en',
         'image',
+        'type',
     ];
     // protected $hidden = [];
     // protected $dates = [];
