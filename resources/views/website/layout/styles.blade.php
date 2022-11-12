@@ -1,11 +1,16 @@
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{url('template/css/animate.css')}}">
-<link rel="stylesheet" href="{{url('template/css/owl.carousel.min.css')}}">
-<link rel="stylesheet" href="{{url('template/css/owl.theme.default.min.css')}}">
-<link rel="stylesheet" href="{{url('template/css/magnific-popup.css')}}">
-<link rel="stylesheet" href="{{url('template/css/flaticon.css')}}">
-<link rel="stylesheet" href="{{url('template/css/style.css')}}">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="{{url('template/assets/img/icon/favicon.png')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/owl.carousel.min.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/slicknav.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/animate.min.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/price_rangs.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/magnific-popup.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/fontawesome-all.min.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/themify-icons.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/slick.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/nice-select.css')}}">
+<link rel="stylesheet" href="{{url('template/assets/css/style.css')}}">
