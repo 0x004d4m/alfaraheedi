@@ -19,6 +19,8 @@ class CreateOrdersTable extends Migration
             $table->foreign('order_status_id')->references('id')->on('order_statuses');
             $table->unsignedBigInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers');
+            $table->unsignedBigInteger('driver_id');
+            $table->foreign('driver_id')->references('id')->on('drivers');
             $table->text('address');
             $table->timestamps();
             $table->softDeletes();

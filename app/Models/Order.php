@@ -24,6 +24,7 @@ class Order extends Model
     protected $fillable = [
         'order_status_id',
         'customer_id',
+        'driver_id',
         'address',
     ];
     // protected $hidden = [];
@@ -44,6 +45,11 @@ class Order extends Model
     public function orderStatus()
     {
         return $this->belongsTo(OrderStatus::class);
+    }
+
+    public function driver()
+    {
+        return $this->belongsTo(Driver::class);
     }
 
     public function customer()
