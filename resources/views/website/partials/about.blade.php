@@ -1,72 +1,44 @@
 <!-- About details Start -->
-<div class="about-details">
+<div id='about' class="about-details">
     <div class="container">
         <div class="row">
             <div class="offset-xl-1 col-xl-10 col-lg-8">
                 <div class="section-tittle mb-15">
-                    <h2>Our Story</h2>
+                    <h2>About Us</h2>
                 </div>
             </div>
             <div class="offset-xl-1 col-xl-9">
                 <div class="about-pera">
                     <p>
-                        Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures
-                        feature women of all shapes and sizes enjoying themselves .Born between the two world
-                        wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she
-                        went to secretarial school and then into an insurance office. After moving to London and
-                        then Hampton, she eventually married her next door neighbour from Reading, John Cook. He
-                        was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub
-                        for a year before John took a job in Southern Rhodesia with a motor company. Beryl
-                        bought their young son a box of watercolours, and when showing him how to use it, she
-                        decided that she herself quite enjoyed painting. John subsequently bought her a child’s
-                        painting set for her birthday and it was with this that she produced her first
-                        significant work, a half-length portrait of a dark-skinned lady with a vacant expression
-                        and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
+                        We are humbled to introduce ourselves to your esteemed educational establishments, as academics
+                        having the first contact in schools, universities, and learning institutes, our support extends
+                        throughout the whole year when you adopt your curriculums through us.<br><br>
+                        Smart Core for Publishing and Distribution is a rising distributor with a local presence which
+                        exists to provide the educational materials to your esteemed educational establishments for
+                        every level of education through high quality services – whether it is a child learning his
+                        first words of English, or a higher education student writing his first thesis. Working
+                        internationally and locally allows us to get close to the people in charge.<br><br>
+                        We have adapted to the different learning styles during the pandemic by assuring the publishers
+                        online services and providing all academic resources available to ease and enhance the
+                        experience of our correspondent.<br><br>
+                        Our international Publishers' and partners include SAT, IB PYP – MYP, IGCSE, HSD, CP and CS
+                        Programs.<br><br>
+                        -The international Publishers are: June Publishers (UK), Pearson, McGraw Hill, York, Cambridge,
+                        Oxford, and Macmillan, National Geographic, Hodder, Harcourt and Sadlier.<br><br>
+                        -The French Publishers are: CLE International, Hachette, Didier, Hatier and Maison des Langues.
+                        -Arabic Publishers are: June Publishers (Jordan), Hachette Antoine (Lebanon), Dar Al Chimal
+                        (Lebanon) And Eclipse (Jordan).<br><br>
+                        Our goal is to implement a strategy on gaining an excellent relationship with all learning
+                        facilities in order to achieve the marked target of study by your esteemed learning
+                        establishments for students of all levels. This creativity is aimed to measure the effect of our
+                        collaboration on our students especially since a new way of distance learning is now vital.
+                        We are looking forward to begin a fruitful business relationship with you.
+                    </p>
 
-                    </p>
-                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this
-                        fact, we are seeing more and more recipe books and Internet websites that are dedicated
-                        to the act of cooking for one. Divorce and the death of spouses or grown children
-                        leaving for college are all reasons that someone accustomed to cooking for more than one
-                        would suddenly need to learn how to adjust all the cooking practices utilized before
-                        into a streamlined plan of cooking that is more efficient for one person creating less.
-                    </p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="offset-xl-1 col-xl-10 col-lg-8">
-                <div class="section-tittle mb-15">
-                    <h2>Our Goal</h2>
-                </div>
-            </div>
-            <div class="offset-xl-1 col-xl-9">
-                <div class="about-pera p-0">
-                    <p>
-                        Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures
-                        feature women of all shapes and sizes enjoying themselves .Born between the two world
-                        wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she
-                        went to secretarial school and then into an insurance office. After moving to London and
-                        then Hampton, she eventually married her next door neighbour from Reading, John Cook. He
-                        was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub
-                        for a year before John took a job in Southern Rhodesia with a motor company. Beryl
-                        bought their young son a box of watercolours, and when showing him how to use it, she
-                        decided that she herself quite enjoyed painting. John subsequently bought her a child’s
-                        painting set for her birthday and it was with this that she produced her first
-                        significant work, a half-length portrait of a dark-skinned lady with a vacant expression
-                        and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
 
-                    </p>
-                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this
-                        fact, we are seeing more and more recipe books and Internet websites that are dedicated
-                        to the act of cooking for one. Divorce and the death of spouses or grown children
-                        leaving for college are all reasons that someone accustomed to cooking for more than one
-                        would suddenly need to learn how to adjust all the cooking practices utilized before
-                        into a streamlined plan of cooking that is more efficient for one person creating less.
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- About details End -->

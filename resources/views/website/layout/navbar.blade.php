@@ -9,24 +9,22 @@
                                 <div class="header-info-left d-flex align-items-center">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="index.html"><img src="{{url('template/assets/img/logo/logo.png')}}" alt=""></a>
+                                        <a href="#"><img src="{{ url('template/assets/img/logo/logo.png') }}"
+                                                alt=""></a>
                                     </div>
-                                    <!-- Search Box -->
-                                    <form action="#" class="form-box">
-                                        <input type="text" name="Search"
-                                            placeholder="Search book by author or publisher">
-                                        <div class="search-icon">
-                                            <i class="ti-search"></i>
-                                        </div>
-                                    </form>
+                                    <a> </a>
                                 </div>
                                 <div class="header-info-right d-flex align-items-center">
                                     <ul>
-                                        <li><a href="#">FAQ</a></li>
-                                        <li><a href="#">Track Order</a></li>
-                                        <li class="shopping-card">
-                                            <a href="cart.html"><img src="{{url('template/assets/img/icon/cart.svg')}}" alt=""></a>
-                                        </li>
+                                        <li><a href="tel:+966 5 6444 2238"><i class="fa fa-phone"
+                                                    aria-hidden="true"></i></a></li>
+                                        <li><a href="mailto:info@smartcore-ksa.com"><i class="fa fa-envelope"
+                                                    aria-hidden="true"></i></a></li>
+                                        {{-- <li class="shopping-card">
+                                            <a href="cart.html"><img
+                                                    src="{{ url('template/assets/img/icon/cart.svg') }}"
+                                                    alt=""></a>
+                                        </li> --}}
                                         <li><a href="login.html" class="btn header-btn">Sign in</a></li>
                                     </ul>
                                 </div>
@@ -41,27 +39,18 @@
                         <div class="col-xl-12">
                             <!-- logo 2 -->
                             <div class="logo2">
-                                <a href="index.html"><img src="{{url('template/assets/img/logo/logo.png')}}" alt=""></a>
+                                <a href="#"><img src="{{ url('template/assets/img/logo/logo.png') }}"
+                                        alt=""></a>
                             </div>
                             <!-- Main-menu -->
                             <div class="main-menu text-center d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="categories.html">Categories</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="#">Pages</a>
-                                            <ul class="submenu">
-                                                <li><a href="login.html">login</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="book-details.html">book Details</a></li>
-                                                <li><a href="blog_details.html">Blog Details</a></li>
-                                                <li><a href="elements.html">Element</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contect</a></li>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#best_selling">Best Selling</a></li>
+                                        <li><a href="#latest">Latest</a></li>
+                                        <li><a href="#contact_us">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>
