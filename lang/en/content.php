@@ -17,4 +17,9 @@ return [
     'Send'=> 'Send',
     'Mon to Fri 9am to 6pm'=>'Mon to Fri 9am to 6pm',
     'Send us your query anytime!' => 'Send us your query anytime!',
+    'Authour' => 'Authour',
+    'Reviews' => 'Reviews',
+    'SR' => 'SR',
+    'Out Of Stock' => 'Out Of Stock',
+    'In Stock' => 'In Stock',
 ];

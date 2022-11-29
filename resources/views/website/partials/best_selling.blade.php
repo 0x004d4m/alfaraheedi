@@ -11,209 +11,39 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="selling-active">
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties-card">
-                            <div class="properties-img">
-                                <a href="book-details.html"><img
-                                        src="{{ url('template/assets/img/gallery/best_selling1.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="properties-caption">
-                                <h3><a href="book-details.html">Moon Dance</a></h3>
-                                <p>J. R Rain</p>
-                                <div class="properties-footer d-flex justify-content-between align-items-center">
-                                    <div class="review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
+                    @foreach (App\Models\Product::select('id','name_'.Session::get('locale').' as name', 'price', 'stock', 'image1')->with(['authour:name_'.Session::get('locale').' as name'])->inRandomOrder()->limit(20)->get() as $Product)
+                        <!-- Single -->
+                        <div class="properties pb-20">
+                            <div class="properties-card">
+                                <div class="properties-img">
+                                    <a href="Product/{{$Product->id}}"><img src="{{ $Product->image1 }}" alt="{{$Product->name}}"></a>
+                                </div>
+                                <div class="properties-caption">
+                                    <h3><a href="Product/{{$Product->id}}">{{$Product->name}}</a></h3>
+                                    @if ($Product->authour)
+                                        <p><span>{{__('content.Authour')}}:</span> {{$Product->authour->name}}</p>
+                                    @endif
+                                    @if ($Product->stock > 0)
+                                        <div class="price">
+                                            <span>{{__('content.In Stock')}}: {{$Product->stock}}</span>
                                         </div>
-                                        <p>(<span>120</span> Review)</p>
-                                    </div>
-                                    <div class="price">
-                                        <span>$50</span>
+                                    @else
+                                        <div class="price">
+                                            <span>{{__('content.Out If Stock')}}</span>
+                                        </div>
+                                    @endif
+                                    <div class="properties-footer d-flex justify-content-between align-items-center">
+                                        <div class="review">
+                                            <p>(<span>0</span> {{__('content.Reviews')}})</p>
+                                        </div>
+                                        <div class="price">
+                                            <span>{{$Product->price}} {{__('content.SR')}}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties-card">
-                            <div class="properties-img">
-                                <a href="book-details.html"><img
-                                        src="{{ url('template/assets/img/gallery/best_selling2.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="properties-caption">
-                                <h3><a href="book-details.html">Moon Dance</a></h3>
-                                <p>J. R Rain</p>
-                                <div class="properties-footer d-flex justify-content-between align-items-center">
-                                    <div class="review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                        <p>(<span>120</span> Review)</p>
-                                    </div>
-                                    <div class="price">
-                                        <span>$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties-card">
-                            <div class="properties-img">
-                                <a href="book-details.html"><img
-                                        src="{{ url('template/assets/img/gallery/best_selling3.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="properties-caption">
-                                <h3><a href="book-details.html">Moon Dance</a></h3>
-                                <p>J. R Rain</p>
-                                <div class="properties-footer d-flex justify-content-between align-items-center">
-                                    <div class="review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                        <p>(<span>120</span> Review)</p>
-                                    </div>
-                                    <div class="price">
-                                        <span>$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties-card">
-                            <div class="properties-img">
-                                <a href="book-details.html"><img
-                                        src="{{ url('template/assets/img/gallery/best_selling4.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="properties-caption">
-                                <h3><a href="book-details.html">Moon Dance</a></h3>
-                                <p>J. R Rain</p>
-                                <div class="properties-footer d-flex justify-content-between align-items-center">
-                                    <div class="review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                        <p>(<span>120</span> Review)</p>
-                                    </div>
-                                    <div class="price">
-                                        <span>$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties-card">
-                            <div class="properties-img">
-                                <a href="book-details.html"><img
-                                        src="{{ url('template/assets/img/gallery/best_selling5.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="properties-caption">
-                                <h3><a href="book-details.html">Moon Dance</a></h3>
-                                <p>J. R Rain</p>
-                                <div class="properties-footer d-flex justify-content-between align-items-center">
-                                    <div class="review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                        <p>(<span>120</span> Review)</p>
-                                    </div>
-                                    <div class="price">
-                                        <span>$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties-card">
-                            <div class="properties-img">
-                                <a href="book-details.html"><img
-                                        src="{{ url('template/assets/img/gallery/best_selling6.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="properties-caption">
-                                <h3><a href="book-details.html">Moon Dance</a></h3>
-                                <p>J. R Rain</p>
-                                <div class="properties-footer d-flex justify-content-between align-items-center">
-                                    <div class="review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                        <p>(<span>120</span> Review)</p>
-                                    </div>
-                                    <div class="price">
-                                        <span>$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single -->
-                    <div class="properties pb-20">
-                        <div class="properties-card">
-                            <div class="properties-img">
-                                <a href="book-details.html"><img
-                                        src="{{ url('template/assets/img/gallery/best_selling4.jpg') }}"
-                                        alt=""></a>
-                            </div>
-                            <div class="properties-caption">
-                                <h3><a href="book-details.html">Moon Dance</a></h3>
-                                <p>J. R Rain</p>
-                                <div class="properties-footer d-flex justify-content-between align-items-center">
-                                    <div class="review">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                        <p>(<span>120</span> Review)</p>
-                                    </div>
-                                    <div class="price">
-                                        <span>$50</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
