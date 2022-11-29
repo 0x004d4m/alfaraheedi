@@ -17,7 +17,6 @@
             <div class="col-xl-6">
                 <div class="">
                     <p>{!!__('content.about_content')!!}</p>
-
                 </div>
             </div>
         </div>

@@ -20,7 +20,10 @@ class CreateProductsTable extends Migration
             $table->text('description_ar');
             $table->text('description_en');
             $table->double('price');
-            $table->json('images');
+            $table->text('image1');
+            $table->text('image2')->nullable();
+            $table->text('image3')->nullable();
+            $table->integer('stock');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('authour_id')->nullable();

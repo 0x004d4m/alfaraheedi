@@ -16,6 +16,8 @@ return [
     'translatable_field_icon_position' => 'right', // left or right
 
     'locales' => [
+        "en" => "English",
+        "ar" => "Arabic",
         // "af_NA" => "Afrikaans (Namibia)",
         // "af_ZA" => "Afrikaans (South Africa)",
         // "af" => "Afrikaans",
@@ -42,7 +44,6 @@ return [
         // "ar_TN" => "Arabic (Tunisia)",
         // "ar_AE" => "Arabic (United Arab Emirates)",
         // "ar_YE" => "Arabic (Yemen)",
-        "ar" => "Arabic",
         // "hy_AM" => "Armenian (Armenia)",
         // "hy" => "Armenian",
         // "as_IN" => "Assamese (India)",
@@ -132,7 +133,6 @@ return [
         // "en_GB" => "English (United Kingdom)",
         // "en_US" => "English (United States)",
         // "en_ZW" => "English (Zimbabwe)",
-        'en' => 'English',
         // "eo" => "Esperanto",
         // "et_EE" => "Estonian (Estonia)",
         // "et" => "Estonian",
