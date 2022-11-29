@@ -1,4 +1,10 @@
 <!--?  Contact Area start  -->
+<style>
+    .contact-info__icon {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+</style>
 <section class="contact-section">
     <div id='contact_us' class="container">
         <!-- <div class="d-none d-sm-block mb-5 pb-4">
@@ -507,7 +513,7 @@
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                     <div class="media-body">
-                        <h3>+966 5 6444 2238</h3>
+                        <h3><span dir="ltr">+966 5 6444 2238</span></h3>
                         <p>{{__('content.Mon to Fri 9am to 6pm')}}</p>
                     </div>
                 </div>

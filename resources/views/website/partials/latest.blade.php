@@ -1,14 +1,14 @@
 <!-- Latest-items Start -->
 <section class="our-client section-padding best-selling">
     <div id='latest' class="container">
-        <div class="row justify-content-between">
-            <div class="col-xl-5 col-lg-5 col-md-12">
+        <div class="row justify-content-between" dir="{{Session::get('locale') == 'ar'?'rtl':'ltr'}}">
+            <div class="col-xl-6 col-lg-6 col-md-12">
                 <!-- Section Tittle -->
                 <div class="section-tittle  mb-40">
                     <h2>{{__('content.Latest Published items')}}</h2>
                 </div>
             </div>
-            <div class="col-xl-7 col-lg-7 col-md-12">
+            <div class="col-xl-6 col-lg-6 col-md-12">
                 <div class="nav-button mb-40">
                     <!--Nav Button  -->
                     <nav>

@@ -70,3 +70,11 @@
 <div id="back-top">
     <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            {!!Session::get('locale') == 'ar'?'<iframe width="560" height="315" src="https://www.youtube.com/embed/duy6Hvo3f8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>':'<iframe width="560" height="315" src="https://www.youtube.com/embed/Kn4_ZbbciQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'!!}
+        </div>
+    </div>
+</div>
