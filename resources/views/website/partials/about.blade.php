@@ -9,10 +9,12 @@
             </div>
         </div>
         <div class="row {{Session::get('locale') == 'ar'?'text-right':'text-left'}}" dir="{{Session::get('locale') == 'ar'?'rtl':'ltr'}}">
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img class="col-3" src="{{Session::get('locale') == 'ar'?'https://img.youtube.com/vi/duy6Hvo3f8w/sddefault.jpg':'https://img.youtube.com/vi/Kn4_ZbbciQw/sddefault.jpg'}}">
-            </a>
-            <div class="col-9">
+            <div class="col-xl-6">
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="{{Session::get('locale') == 'ar'?'https://img.youtube.com/vi/duy6Hvo3f8w/sddefault.jpg':'https://img.youtube.com/vi/Kn4_ZbbciQw/sddefault.jpg'}}">
+                </a>
+            </div>
+            <div class="col-xl-6">
                 <div class="about-pera">
                     <p>{!!__('content.about_content')!!}</p>
 
