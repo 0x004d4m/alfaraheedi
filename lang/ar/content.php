@@ -2,7 +2,11 @@
 
 return [
 
-    'about' => '&laquo; Previous',
-    'next' => 'Next &raquo;',
+    'signin' => 'تسجيل الدخول',
+    'Home' => 'الرئيسية',
+    'About' => 'عن الموقع',
+    'Best Selling' => 'الأكثر مبيعا',
+    'Latest' => 'الأحدث',
+    'Contact Us' => 'تواصل معنا',
 
 ];
