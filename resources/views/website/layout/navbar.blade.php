@@ -49,7 +49,7 @@
                             </div>
                             <!-- Main-menu -->
                             <div class="main-menu text-center d-none d-lg-block">
-                                <nav>
+                                <nav dir="{{Session::get('locale') == 'ar'?'rtl':'ltr'}}">
                                     <ul id="navigation">
                                         <li><a href="#">{{__('content.Home')}}</a></li>
                                         <li><a href="#about">{{__('content.About')}}</a></li>

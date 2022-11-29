@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="{{Session::get('locale')}}" dir="{{Session::get('locale') == 'ar'?'rtl':'ltr'}}">
+<html class="no-js" lang="xxx">
     <head>
         <title>@yield('title')</title>
         @include('website.layout.styles')
