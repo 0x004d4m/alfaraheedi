@@ -37,7 +37,7 @@
                                 <div class="properties pb-20">
                                     <div class="properties-card">
                                         <div class="properties-img">
-                                            <a href="Product/{{$Product->id}}"><img src="{{ $Product->image1 }}" alt="{{$Product->name}}"></a>
+                                            <a href="Product/{{$Product->id}}"><img src="{{ $Product->image1 }}" alt="{{$Product->name}}"></a> test
                                         </div>
                                         <div class="properties-caption">
                                             <h3><a href="Product/{{$Product->id}}">{{$Product->name}}</a></h3>
