@@ -112,3 +112,75 @@ clear
 git add .
 #1669971683
 git add .
+#1669971718
+git add .
+#1669971735
+git commit -m uploadToServer
+#1669971753
+git config --global user.email "0x004d4m@gmail.com"
+#1669971773
+git config --global user.name "Adam Sabbah"
+#1669971779
+git commit -m uploadToServer
+#1669971787
+clear
+#1669971793
+git push origin main
+#1669971815
+git pull origin main
+#1669971861
+git config pull.rebase false
+#1669971864
+git pull origin main
+#1669971893
+git push origin main
+#1669971912
+clear
+#1669971914
+git push origin main
+#1669971925
+git pull origin main
+#1669971930
+clear
+#1669971941
+git push origin main
+#1669971976
+clear
+#1669971980
+git push origin main
+#1669972003
+git config http.postBuffer 524288000
+#1669972005
+git push origin main
+#1669972020
+git config http.postBuffer 524288
+#1669972021
+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
+#1669972024
+git push origin main
+#1669972035
+clear
+#1669972041
+git config http.postBuffer 5242880
+#1669972044
+git push origin main
+#1669972090
+export GIT_TRACE_PACKET=1
+#1669972097
+export GIT_TRACE=1
+#1669972102
+export GIT_CURL_VERBOSE=1
+#1669972117
+git push origin main
+#1669972129
+clear
+#1669972132
+git push origin main
+#1669972175
+clear
+#1669972177
+git push origin main
+#1669972183
+clear
+#1669972963
+git pull origin main
