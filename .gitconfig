@@ -1,3 +1,5 @@
 [user]
 	email = 0x004d4m@gmail.com
 	name = Adam Sabbah
+[core]
+	preloadIndex = false
