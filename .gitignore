@@ -5,6 +5,9 @@
 /public_html/hot
 /public/storage
 /public_html/storage
+.htaccess
+!/public_html/.htaccess
+!/public/.htaccess
 /storage/*.key
 /vendor
 .env
@@ -28,7 +31,6 @@ error_log
 .lastlogin
 .kshrc
 .htaccess.no_htaccess.phpupgrader
-.htaccess
 .gemrc
 .emacs
 .dns
