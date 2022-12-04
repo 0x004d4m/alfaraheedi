@@ -54,11 +54,11 @@
                                                 </div>
                                             @endif
                                             <div class="properties-footer d-flex justify-content-between align-items-center">
-                                                <div class="review">
-                                                    <p>(<span>0</span> {{__('content.Reviews')}})</p>
-                                                </div>
                                                 <div class="price">
                                                     <span>{{$Product->price}} {{__('content.SR')}}</span>
+                                                </div>
+                                                <div class="review">
+                                                    <p>(<span>0</span> {{__('content.Reviews')}})</p>
                                                 </div>
                                             </div>
                                         </div>

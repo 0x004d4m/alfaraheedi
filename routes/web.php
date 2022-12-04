@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\Website\ProductController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
@@ -20,5 +21,7 @@ use Illuminate\Support\Facades\Session;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/Product/{id}', [ProductController::class,'show']);
 
 Route::get('/set-language/{locale}', [LanguageController::class,'setLanguage'])->name('set-language');
