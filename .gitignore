@@ -5,6 +5,8 @@
 /public_html/hot
 /public/storage
 /public_html/storage
+!/public_html/.htaccess
+!/public/.htaccess
 /storage/*.key
 /vendor
 .env
