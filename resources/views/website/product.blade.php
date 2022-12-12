@@ -21,7 +21,7 @@
                         <!-- Single -->
                         <div class="single-services d-flex align-items-center mb-0">
                             <div class="features-img" style="width: 20%;" >
-                                <img style="width: 20%;" src="{{url($Product->image1)}}" alt="{{$Product->name}}">
+                                <img style="width: 100%;" src="{{url($Product->image1)}}" alt="{{$Product->name}}">
                             </div>
                             <div class="features-caption mx-4">
                                 <h3>{{$Product->name}}</h3>
