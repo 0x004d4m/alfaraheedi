@@ -90,10 +90,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         @if ($Product->image2)
-                            <img style="width: 20%;" src="{{url($Product->image2)}}" alt="{{$Product->name}}"><br><br>
+                            <img style="width: 100%;" src="{{url($Product->image2)}}" alt="{{$Product->name}}"><br><br>
                         @endif
                         @if ($Product->image3)
-                            <img style="width: 20%;" src="{{url($Product->image3)}}" alt="{{$Product->name}}"><br><br>
+                            <img style="width: 100%;" src="{{url($Product->image3)}}" alt="{{$Product->name}}"><br><br>
                         @endif
                     </div>
                     <div class="col-md-6">
