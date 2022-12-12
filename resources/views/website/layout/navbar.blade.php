@@ -21,16 +21,14 @@
                                         @else
                                             <li><a href="{{ url('/set-language/en') }}">English</a></li>
                                         @endif
-                                        <li><a href="tel:+966 5 6444 2238"><i class="fa fa-phone"
-                                                    aria-hidden="true"></i></a></li>
-                                        <li><a href="mailto:info@smartcore-ksa.com"><i class="fa fa-envelope"
-                                                    aria-hidden="true"></i></a></li>
-                                        {{-- <li class="shopping-card">
-                                            <a href="cart.html"><img
-                                                    src="{{ url('template/assets/img/icon/cart.svg') }}"
-                                                    alt=""></a>
-                                        </li> --}}
-                                        <li><a href="/login" class="btn header-btn">{{__('content.signin')}}</a></li>
+                                        <li><a href="tel:+966 5 6444 2238"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                                        <li><a href="mailto:info@smartcore-ksa.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                        @if (Session::has('CustomerToken'))
+                                            <li><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            <li><a href="/logout" class="btn header-btn">{{__('content.signout')}}</a></li>
+                                        @else
+                                            <li><a href="/login" class="btn header-btn">{{__('content.signin')}}</a></li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>
@@ -51,11 +49,12 @@
                             <div class="main-menu text-center d-none d-lg-block">
                                 <nav dir="{{Session::get('locale') == 'ar'?'rtl':'ltr'}}">
                                     <ul id="navigation">
-                                        <li><a href="#">{{__('content.Home')}}</a></li>
-                                        <li><a href="#about">{{__('content.About')}}</a></li>
-                                        <li><a href="#best_selling">{{__('content.Best Selling')}}</a></li>
-                                        <li><a href="#latest">{{__('content.Latest')}}</a></li>
-                                        <li><a href="#contact_us">{{__('content.Contact Us')}}</a></li>
+                                        <li><a href="/">{{__('content.Home')}}</a></li>
+                                        <li><a href="/store">{{__('content.Store')}}</a></li>
+                                        <li><a href="/#about">{{__('content.About')}}</a></li>
+                                        <li><a href="/#best_selling">{{__('content.Best Selling')}}</a></li>
+                                        <li><a href="/#latest">{{__('content.Latest')}}</a></li>
+                                        <li><a href="/#contact_us">{{__('content.Contact Us')}}</a></li>
                                     </ul>
                                 </nav>
                             </div>

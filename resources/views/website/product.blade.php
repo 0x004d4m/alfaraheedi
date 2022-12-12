@@ -5,15 +5,25 @@
 <div class="services-area2">
     <div class="container">
         <div class="row">
+            @if(Session::has('Success'))
+                <div class="col-md-12">
+                    <div class="alert alert-success">{{ Session::get('Success') }}</div>
+                </div>
+            @endif
+            @if(Session::has('Error'))
+                <div class="col-md-12">
+                    <div class="alert alert-danger">{{ Session::get('Error') }}</div>
+                </div>
+            @endif
             <div class="col-xl-12">
-                <div class="row">
+                <div class="row" dir="{{__('content.dir')}}">
                     <div class="col-xl-12">
                         <!-- Single -->
                         <div class="single-services d-flex align-items-center mb-0">
                             <div class="features-img">
                                 <img src="{{url($Product->image1)}}" alt="{{$Product->name}}">
                             </div>
-                            <div class="features-caption">
+                            <div class="features-caption mx-4">
                                 <h3>{{$Product->name}}</h3>
                                 @if ($Product->authour)
                                     <p><span>{{__('content.Authour')}}:</span> {{$Product->authour->name}}</p>
@@ -24,7 +34,7 @@
                                     </div>
                                 @else
                                     <div class="price">
-                                        <span>{{__('content.Out If Stock')}}</span>
+                                        <span>{{__('content.Out Of Stock')}}</span>
                                     </div>
                                 @endif
                                 <div class="properties-footer d-flex justify-content-between align-items-center">
@@ -35,8 +45,13 @@
                                         <p>(<span>0</span> {{__('content.Reviews')}})</p>
                                     </div>
                                 </div>
-                                <a href="#" class="white-btn mr-10">Add to Cart</a>
-                                <a href="#" class="border-btn share-btn"><i class="fas fa-share-alt"></i></a>
+                                <form class="d-flex" method="post" action="/cart">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{$Product->id}}">
+                                    <button type="submit" name="addToCart" class="btn btn-white text-dark mr-10 mb-2 mx-2 d-flex justify-content-between" style="background-color: white; color: black!important;">{{__('content.Add to Cart')}}</button>
+                                    <input type="number" name="quantity" class="form-control mb-2" value="0" min="1" max="{{$Product->stock}}" required style="width: 30%!important;">
+                                </form>
+                                {{-- <a href="#" class="border-btn share-btn"><i class="fas fa-share-alt"></i></a> --}}
                             </div>
                         </div>
                     </div>
@@ -48,22 +63,18 @@
 <!-- services-area End-->
 
 <!--Books review Start -->
-<section class="our-client section-padding best-selling">
+<section class="our-client section-padding best-selling" dir="{{__('content.dir')}}">
     <div class="container">
         <div class="row">
-            <div class="offset-xl-1 col-xl-10">
-                <div class="nav-button f-left">
+            <div class="col-xl-12">
+                <div class="nav-button f-{{__('content.dir2')}}">
                     <!--Nav Button  -->
                     <nav>
                         <div class="nav nav-tabs " id="nav-tab" role="tablist">
                             <a class="nav-link active" id="nav-one-tab" data-bs-toggle="tab" href="#nav-one"
-                                role="tab" aria-controls="nav-one" aria-selected="true">Description</a>
+                                role="tab" aria-controls="nav-one" aria-selected="true">{{__('content.Description')}}</a>
                             <a class="nav-link" id="nav-two-tab" data-bs-toggle="tab" href="#nav-two" role="tab"
-                                aria-controls="nav-two" aria-selected="false">Author</a>
-                            <a class="nav-link" id="nav-three-tab" data-bs-toggle="tab" href="#nav-three"
-                                role="tab" aria-controls="nav-three" aria-selected="false">Comments</a>
-                            <a class="nav-link" id="nav-four-tab" data-bs-toggle="tab" href="#nav-four"
-                                role="tab" aria-controls="nav-four" aria-selected="false">Review</a>
+                                aria-controls="nav-two" aria-selected="false">{{__('content.Review')}}</a>
                         </div>
                     </nav>
                     <!--End Nav Button  -->
@@ -78,27 +89,13 @@
                 <!-- Tab 1 -->
                 <div class="row">
                     <div class="offset-xl-1 col-lg-9">
-                        <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures
-                            feature women of all shapes and sizes enjoying themselves .Born between the two
-                            world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15,
-                            where she went to secretarial school and then into an insurance office. After moving
-                            to London and then Hampton, she eventually married her next door neighbour from
-                            Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea
-                            in 1956, they bought a pub for a year before John took a job in Southern Rhodesia
-                            with a motor company. Beryl bought their young son a box of watercolours, and when
-                            showing him how to use it, she decided that she herself quite enjoyed painting. John
-                            subsequently bought her a child’s painting set for her birthday and it was with this
-                            that she produced her first significant work, a half-length portrait of a
-                            dark-skinned lady with a vacant expression and large drooping breasts. It was aptly
-                            named ‘Hangover’ by Beryl’s husband and</p>
-
-                        <p>It is often frustrating to attempt to plan meals that are designed for one. Despite
-                            this fact, we are seeing more and more recipe books and Internet websites that are
-                            dedicated to the act of cooking for one. Divorce and the death of spouses or grown
-                            children leaving for college are all reasons that someone accustomed to cooking for
-                            more than one would suddenly need to learn how to adjust all the cooking practices
-                            utilized before into a streamlined plan of cooking that is more efficient for one
-                            person creating less.</p>
+                        @if ($Product->image2)
+                        <img src="{{url($Product->image2)}}" alt="{{$Product->name}}"><br><br>
+                        @endif
+                        @if ($Product->image3)
+                            <img src="{{url($Product->image3)}}" alt="{{$Product->name}}"><br><br>
+                        @endif
+                        <p>{!! $Product->description!!}</p>
                     </div>
                 </div>
             </div>
@@ -106,111 +103,9 @@
                 <!-- Tab 2 -->
                 <div class="row">
                     <div class="offset-xl-1 col-lg-9">
-                        <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures
-                            feature women of all shapes and sizes enjoying themselves .Born between the two
-                            world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15,
-                            where she went to secretarial school and then into an insurance office. After moving
-                            to London and then Hampton, she eventually married her next door neighbour from
-                            Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea
-                            in 1956, they bought a pub for a year before John took a job in Southern Rhodesia
-                            with a motor company. Beryl bought their young son a box of watercolours, and when
-                            showing him how to use it, she decided that she herself quite enjoyed painting. John
-                            subsequently bought her a child’s painting set for her birthday and it was with this
-                            that she produced her first significant work, a half-length portrait of a
-                            dark-skinned lady with a vacant expression and large drooping breasts. It was aptly
-                            named ‘Hangover’ by Beryl’s husband and</p>
-
-                        <p>It is often frustrating to attempt to plan meals that are designed for one. Despite
-                            this fact, we are seeing more and more recipe books and Internet websites that are
-                            dedicated to the act of cooking for one. Divorce and the death of spouses or grown
-                            children leaving for college are all reasons that someone accustomed to cooking for
-                            more than one would suddenly need to learn how to adjust all the cooking practices
-                            utilized before into a streamlined plan of cooking that is more efficient for one
-                            person creating less.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-three" role="tabpanel" aria-labelledby="nav-three-tab">
-                <!-- Tab 3 -->
-                <div class="row">
-                    <div class="offset-xl-1 col-lg-9">
-                        <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures
-                            feature women of all shapes and sizes enjoying themselves .Born between the two
-                            world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15,
-                            where she went to secretarial school and then into an insurance office. After moving
-                            to London and then Hampton, she eventually married her next door neighbour from
-                            Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea
-                            in 1956, they bought a pub for a year before John took a job in Southern Rhodesia
-                            with a motor company. Beryl bought their young son a box of watercolours, and when
-                            showing him how to use it, she decided that she herself quite enjoyed painting. John
-                            subsequently bought her a child’s painting set for her birthday and it was with this
-                            that she produced her first significant work, a half-length portrait of a
-                            dark-skinned lady with a vacant expression and large drooping breasts. It was aptly
-                            named ‘Hangover’ by Beryl’s husband and</p>
-
-                        <p>It is often frustrating to attempt to plan meals that are designed for one. Despite
-                            this fact, we are seeing more and more recipe books and Internet websites that are
-                            dedicated to the act of cooking for one. Divorce and the death of spouses or grown
-                            children leaving for college are all reasons that someone accustomed to cooking for
-                            more than one would suddenly need to learn how to adjust all the cooking practices
-                            utilized before into a streamlined plan of cooking that is more efficient for one
-                            person creating less.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-four" role="tabpanel" aria-labelledby="nav-four-tab">
-                <!-- Tab 4 -->
-                <div class="row">
-                    <div class="offset-xl-1 col-lg-9">
-                        <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures
-                            feature women of all shapes and sizes enjoying themselves .Born between the two
-                            world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15,
-                            where she went to secretarial school and then into an insurance office. After moving
-                            to London and then Hampton, she eventually married her next door neighbour from
-                            Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea
-                            in 1956, they bought a pub for a year before John took a job in Southern Rhodesia
-                            with a motor company. Beryl bought their young son a box of watercolours, and when
-                            showing him how to use it, she decided that she herself quite enjoyed painting. John
-                            subsequently bought her a child’s painting set for her birthday and it was with this
-                            that she produced her first significant work, a half-length portrait of a
-                            dark-skinned lady with a vacant expression and large drooping breasts. It was aptly
-                            named ‘Hangover’ by Beryl’s husband and</p>
-
-                        <p>It is often frustrating to attempt to plan meals that are designed for one. Despite
-                            this fact, we are seeing more and more recipe books and Internet websites that are
-                            dedicated to the act of cooking for one. Divorce and the death of spouses or grown
-                            children leaving for college are all reasons that someone accustomed to cooking for
-                            more than one would suddenly need to learn how to adjust all the cooking practices
-                            utilized before into a streamlined plan of cooking that is more efficient for one
-                            person creating less.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-five" role="tabpanel" aria-labelledby="nav-five-tab">
-                <!-- Tab 5 -->
-                <div class="row">
-                    <div class="offset-xl-1 col-lg-9">
-                        <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures
-                            feature women of all shapes and sizes enjoying themselves .Born between the two
-                            world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15,
-                            where she went to secretarial school and then into an insurance office. After moving
-                            to London and then Hampton, she eventually married her next door neighbour from
-                            Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea
-                            in 1956, they bought a pub for a year before John took a job in Southern Rhodesia
-                            with a motor company. Beryl bought their young son a box of watercolours, and when
-                            showing him how to use it, she decided that she herself quite enjoyed painting. John
-                            subsequently bought her a child’s painting set for her birthday and it was with this
-                            that she produced her first significant work, a half-length portrait of a
-                            dark-skinned lady with a vacant expression and large drooping breasts. It was aptly
-                            named ‘Hangover’ by Beryl’s husband and</p>
-
-                        <p>It is often frustrating to attempt to plan meals that are designed for one. Despite
-                            this fact, we are seeing more and more recipe books and Internet websites that are
-                            dedicated to the act of cooking for one. Divorce and the death of spouses or grown
-                            children leaving for college are all reasons that someone accustomed to cooking for
-                            more than one would suddenly need to learn how to adjust all the cooking practices
-                            utilized before into a streamlined plan of cooking that is more efficient for one
-                            person creating less.</p>
+                        <p>
+                            Comming Soon
+                        </p>
                     </div>
                 </div>
             </div>

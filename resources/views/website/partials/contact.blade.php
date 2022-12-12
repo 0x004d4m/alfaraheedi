@@ -465,33 +465,40 @@
             <div class="col-12">
                 <h2 class="contact-title">{{__('content.Get in Touch')}}</h2>
             </div>
+            @if (Session::has('Success'))
+                <div class="col-12">
+                    <div class="alert alert-success">
+                        {{Session::get('Success')}}
+                    </div>
+                </div>
+            @endif
             <div class="col-lg-8">
-                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-                    novalidate="novalidate">
+                <form class="form-contact contact_form" action="/contact" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" required
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter Message')}}'" placeholder="{{__('content.Enter Message')}}"></textarea>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input class="form-control valid" name="name" id="name" type="text"
+                                <input class="form-control valid" name="name" id="name" type="text" required
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter your name')}}'"
                                     placeholder="{{__('content.Enter your name')}}">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input class="form-control valid" name="email" id="email" type="email"
+                                <input class="form-control valid" name="email" id="email" type="email" required
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter email address')}}'"
                                     placeholder="{{__('content.Enter email address')}}">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <input class="form-control" name="subject" id="subject" type="text"
+                                <input class="form-control" name="subject" id="subject" type="text" required
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter Subject')}}'"
                                     placeholder="{{__('content.Enter Subject')}}">
                             </div>

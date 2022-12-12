@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Filters\Products\ProductsFilter;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,10 +10,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
-    use CrudTrait, HasFactory, SoftDeletes, CrudTrait;
+    use CrudTrait, HasFactory, SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------
@@ -67,6 +69,10 @@ class Product extends Model
     | SCOPES
     |--------------------------------------------------------------------------
     */
+    public function scopeFilter(Builder $builder, $request)
+    {
+        return (new ProductsFilter($request))->filter($builder);
+    }
 
     /*
     |--------------------------------------------------------------------------

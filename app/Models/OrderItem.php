@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class OrderItem extends Model
 {
-    use CrudTrait, HasFactory, SoftDeletes, CrudTrait;
+    use CrudTrait, HasFactory, SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------

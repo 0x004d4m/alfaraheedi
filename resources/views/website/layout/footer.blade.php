@@ -21,8 +21,7 @@
                             <div class="footer-tittle">
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Get the breathing space now, and we’ll extend your term at the other end
-                                            year for go.</p>
+                                        <p>{{__('content.footer')}}</p>
                                     </div>
                                 </div>
                             </div>

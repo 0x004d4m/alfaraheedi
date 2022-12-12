@@ -10,9 +10,7 @@
         </div>
         <div class="row {{Session::get('locale') == 'ar'?'text-right':'text-left'}}" dir="{{Session::get('locale') == 'ar'?'rtl':'ltr'}}">
             <div class="col-xl-6">
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img class="img-fluid" src="{{Session::get('locale') == 'ar'?'https://img.youtube.com/vi/duy6Hvo3f8w/sddefault.jpg':'https://img.youtube.com/vi/Kn4_ZbbciQw/sddefault.jpg'}}">
-                </a>
+                <img class="img-fluid" src="{{url('template/assets/img/about.png')}}">
             </div>
             <div class="col-xl-6">
                 <div class="">
@@ -20,7 +18,13 @@
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-12">
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="img-fluid" src="{{url('template/assets/img/video.jpg')}}">
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 <!-- About details End -->
