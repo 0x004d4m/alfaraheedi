@@ -19,7 +19,7 @@ Route::group([
     Route::crud('category', 'CategoryCrudController');
     Route::crud('product', 'ProductCrudController');
     Route::crud('customer', 'CustomerCrudController');
-    Route::crud('order', 'OrderCrudController');
+    Route::crud('orders', 'OrderCrudController');
     Route::crud('order-item', 'OrderItemCrudController');
     Route::crud('driver', 'DriverCrudController');
     Route::crud('order-status', 'OrderStatusCrudController');
