@@ -9,3 +9,5 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('order-item') }}"><i class="nav-icon la la-question"></i> Order items</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('driver') }}"><i class="nav-icon la la-question"></i> Drivers</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('order-status') }}"><i class="nav-icon la la-question"></i> Order statuses</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('contact-request') }}"><i class="nav-icon la la-question"></i> Contact requests</a></li>

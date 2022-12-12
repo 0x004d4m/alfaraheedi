@@ -29,7 +29,7 @@
                                         </div>
                                     @else
                                         <div class="price">
-                                            <span>{{__('content.Out If Stock')}}</span>
+                                            <span>{{__('content.Out Of Stock')}}</span>
                                         </div>
                                     @endif
                                     <div class="properties-footer d-flex justify-content-between align-items-center">

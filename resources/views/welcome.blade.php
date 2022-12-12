@@ -1,5 +1,5 @@
 @extends('website.layout.main')
-@section('title', 'Home')
+@section('title', __('content.Home'))
 @section('content')
 
 @include('website.partials.slider')

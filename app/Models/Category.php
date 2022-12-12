@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Category extends Model
 {
-    use CrudTrait, HasFactory, SoftDeletes, CrudTrait;
+    use CrudTrait, HasFactory, SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------
