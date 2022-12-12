@@ -21,7 +21,7 @@
                         <!-- Single -->
                         <div class="single-services d-flex align-items-center mb-0">
                             <div class="features-img">
-                                <img class="img-fluid" height="10%" src="{{url($Product->image1)}}" alt="{{$Product->name}}">
+                                <img class="img-fluid" width="10%" src="{{url($Product->image1)}}" alt="{{$Product->name}}">
                             </div>
                             <div class="features-caption mx-4">
                                 <h3>{{$Product->name}}</h3>
@@ -90,10 +90,10 @@
                 <div class="row">
                     <div class="offset-xl-1 col-lg-9">
                         @if ($Product->image2)
-                            <img class="img-fluid" height="10%" src="{{url($Product->image2)}}" alt="{{$Product->name}}"><br><br>
+                            <img class="img-fluid" width="10%" src="{{url($Product->image2)}}" alt="{{$Product->name}}"><br><br>
                         @endif
                         @if ($Product->image3)
-                            <img class="img-fluid" height="10%" src="{{url($Product->image3)}}" alt="{{$Product->name}}"><br><br>
+                            <img class="img-fluid" width="10%" src="{{url($Product->image3)}}" alt="{{$Product->name}}"><br><br>
                         @endif
                         <p>{!! $Product->description!!}</p>
                     </div>
