@@ -88,13 +88,15 @@
             <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
                 <!-- Tab 1 -->
                 <div class="row">
-                    <div class="offset-xl-1 col-lg-9">
+                    <div class="col-md-6">
                         @if ($Product->image2)
                             <img style="width: 20%;" src="{{url($Product->image2)}}" alt="{{$Product->name}}"><br><br>
                         @endif
                         @if ($Product->image3)
                             <img style="width: 20%;" src="{{url($Product->image3)}}" alt="{{$Product->name}}"><br><br>
                         @endif
+                    </div>
+                    <div class="col-md-6">
                         <p>{!! $Product->description!!}</p>
                     </div>
                 </div>
