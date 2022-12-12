@@ -13,29 +13,31 @@
                     <div class="category-listing mb-50">
                         <!-- single one -->
                         <div class="single-listing">
-                            <!-- select-Categories  -->
-                            <div class="select-Categories pb-30">
-                                <div class="small-tittle mb-20">
-                                    <h4>{{__('content.Filter by Category')}}</h4>
+                            @if (count($Categories)>0)
+                                <!-- select-Categories  -->
+                                <div class="select-Categories pb-30">
+                                    <div class="small-tittle mb-20">
+                                        <h4>{{__('content.Filter by Category')}}</h4>
+                                    </div>
+                                    @foreach ($Categories as $Category)
+                                        @if (Request::has('category_id') && in_array($Category->id,Request::get('category_id')))
+                                            <label class="container">{{$Category->name}}
+                                                <input type="checkbox" name="category_id[]" value="{{$Category->id}}" onclick="document.getElementById('filterForm').submit()" checked="checked active">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        @else
+                                            <label class="container">{{$Category->name}}
+                                                <input type="checkbox" name="category_id[]" value="{{$Category->id}}" onclick="document.getElementById('filterForm').submit()">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        @endif
+                                    @endforeach
                                 </div>
-                                @foreach ($Categories as $Category)
-                                    @if (Request::has('category_id') && in_array($Category->id,Request::get('category_id')))
-                                        <label class="container">{{$Category->name}}
-                                            <input type="checkbox" name="category_id[]" value="{{$Category->id}}" onclick="document.getElementById('filterForm').submit()" checked="checked active">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    @else
-                                        <label class="container">{{$Category->name}}
-                                            <input type="checkbox" name="category_id[]" value="{{$Category->id}}" onclick="document.getElementById('filterForm').submit()">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    @endif
-                                @endforeach
-                            </div>
-                            <!-- select-Categories End -->
+                                <!-- select-Categories End -->
+                            @endif
 
                             <!-- Range Slider Start -->
-                            <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
+                            {{-- <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
                                 <div class="small-tittle">
                                     <h4>{{__('content.Filter by Price')}}</h4>
                                 </div>
@@ -51,29 +53,31 @@
                                         </div>
                                     </div>
                                 </div>
-                            </aside>
+                            </aside> --}}
                             <!-- range end -->
 
-                            <!-- select-Categories start -->
-                            <div class="select-Categories">
-                                <div class="small-tittle mb-20">
-                                    <h4>{{__('content.Filter by Author Name')}}</h4>
+                            @if (count($Authours)>0)
+                                <!-- select-Categories start -->
+                                <div class="select-Categories">
+                                    <div class="small-tittle mb-20">
+                                        <h4>{{__('content.Filter by Author Name')}}</h4>
+                                    </div>
+                                    @foreach ($Authours as $Authour)
+                                        @if (Request::has('authour_id') && in_array($Authour->id,Request::get('authour_id')))
+                                            <label class="container">{{$Authour->name}}
+                                                <input type="checkbox" name="authour_id[]" value="{{$Authour->id}}" onclick="document.getElementById('filterForm').submit()" checked="checked active">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        @else
+                                            <label class="container">{{$Authour->name}}
+                                                <input type="checkbox" name="authour_id[]" value="{{$Authour->id}}" onclick="document.getElementById('filterForm').submit()">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        @endif
+                                    @endforeach
                                 </div>
-                                @foreach ($Authours as $Authour)
-                                    @if (Request::has('authour_id') && in_array($Authour->id,Request::get('authour_id')))
-                                        <label class="container">{{$Authour->name}}
-                                            <input type="checkbox" name="authour_id[]" value="{{$Authour->id}}" onclick="document.getElementById('filterForm').submit()" checked="checked active">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    @else
-                                        <label class="container">{{$Authour->name}}
-                                            <input type="checkbox" name="authour_id[]" value="{{$Authour->id}}" onclick="document.getElementById('filterForm').submit()">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    @endif
-                                @endforeach
-                            </div>
-                            <!-- select-Categories End -->
+                                <!-- select-Categories End -->
+                            @endif
                         </div>
                     </div>
                     <!-- Job Category Listing End -->
