@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 
 class CustomerRequest extends FormRequest
 {
@@ -25,7 +27,13 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'first_name' => 'required|min:2|max:255',
+            'last_name' => 'required|min:2|max:255',
+            'email' => ['required','email',(request()->route('id')==null)?'unique:customers,email':'unique:customers,email,'.request()->route('id')],
+            'phone' => ['required','regex:/^(05)\d{8}/i',(request()->route('id')==null)?'unique:customers,phone':'unique:customers,phone,'.request()->route('id')],
+            'address' => ['required','min:3','max:255'],
+            'password' => ['nullable','regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/i'],
+            'image' => 'nullable',
         ];
     }
 

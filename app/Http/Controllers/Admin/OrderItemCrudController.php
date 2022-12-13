@@ -21,36 +21,45 @@ class OrderItemCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\OrderItem::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/order-item');
-        CRUD::setEntityNameStrings('order item', 'order items');
+        if (!backpack_user()->can('View Orders'))
+        {
+            abort(403, 'Access denied');
+        }
+
+        if (!backpack_user()->can('Manage Orders'))
+        {
+            $this->crud->denyAccess(['create','delete','update']);
+        }
+        $this->crud->setModel('App\Models\OrderItem');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/order-item');
+        $this->crud->setEntityNameStrings('order item', 'order items');
     }
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
     protected function setupListOperation()
     {
-        
+
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
     }
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
@@ -58,18 +67,18 @@ class OrderItemCrudController extends CrudController
     {
         CRUD::setValidation(OrderItemRequest::class);
 
-        
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
          */
     }
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */

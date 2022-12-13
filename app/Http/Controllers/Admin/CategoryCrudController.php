@@ -25,6 +25,15 @@ class CategoryCrudController extends CrudController
      */
     public function setup()
     {
+        if (!backpack_user()->can('View Categories'))
+        {
+            abort(403, 'Access denied');
+        }
+
+        if (!backpack_user()->can('Manage Categories'))
+        {
+            $this->crud->denyAccess(['create','delete','update']);
+        }
         $this->crud->setModel('App\Models\Category');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/category');
         $this->crud->setEntityNameStrings('category', 'categories');
