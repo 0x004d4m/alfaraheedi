@@ -25,17 +25,15 @@ class ProductCrudController extends CrudController
      */
     public function setup()
     {
-        // 'name_ar',
-        // 'name_en',
-        // 'description_ar',
-        // 'description_en',
-        // 'price',
-        // 'image1',
-        // 'image2',
-        // 'image3',
-        // 'stock',
-        // 'category_id',
-        // 'authour_id',
+        if (!backpack_user()->can('View Products'))
+        {
+            abort(403, 'Access denied');
+        }
+
+        if (!backpack_user()->can('Manage Products'))
+        {
+            $this->crud->denyAccess(['create','delete','update']);
+        }
         $this->crud->setModel('App\Models\Product');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/product');
         $this->crud->setEntityNameStrings('product', 'products');

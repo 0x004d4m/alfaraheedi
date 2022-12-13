@@ -25,6 +25,15 @@ class AuthourCrudController extends CrudController
      */
     public function setup()
     {
+        if (!backpack_user()->can('View Authours'))
+        {
+            abort(403, 'Access denied');
+        }
+
+        if (!backpack_user()->can('Manage Authours'))
+        {
+            $this->crud->denyAccess(['create','delete','update']);
+        }
         $this->crud->setModel('App\Models\Authour');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/authour');
         $this->crud->setEntityNameStrings('authour', 'authours');
@@ -71,7 +80,7 @@ class AuthourCrudController extends CrudController
             'name' => 'name_en',
             'type' => 'text',
             'label' => 'Name EN',
-        ]); 
+        ]);
     }
 
     /**

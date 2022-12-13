@@ -21,60 +21,152 @@ class DriverCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Driver::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/driver');
-        CRUD::setEntityNameStrings('driver', 'drivers');
+        if (!backpack_user()->can('View Drivers'))
+        {
+            abort(403, 'Access denied');
+        }
+
+        if (!backpack_user()->can('Manage Drivers'))
+        {
+            $this->crud->denyAccess(['create','delete','update']);
+        }
+        $this->crud->setModel('App\Models\Driver');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/driver');
+        $this->crud->setEntityNameStrings('driver', 'drivers');
     }
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
     protected function setupListOperation()
     {
-        
+        $this->crud->addColumn([
+            'name' => 'first_name',
+            'type' => 'text',
+        ]);
 
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
-         */
+        $this->crud->addColumn([
+            'name' => 'last_name',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'phone',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'car_model',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'car_plate',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'car_color',
+            'type' => 'text',
+        ]);
     }
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(DriverRequest::class);
+        $this->crud->setValidation(DriverRequest::class);
 
-        
+        $this->crud->addField([
+            'name' => 'first_name',
+            'type' => 'text',
+        ]);
 
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
-         */
+        $this->crud->addField([
+            'name' => 'last_name',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'phone',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'car_model',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'car_plate',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'car_color',
+            'type' => 'text',
+        ]);
     }
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    /**
+     * Define what happens when the List operation is loaded.
+     *
+     * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
+     * @return void
+     */
+    protected function setupShowOperation()
+    {
+        $this->crud->addColumn([
+            'name' => 'first_name',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'last_name',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'phone',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'car_model',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'car_plate',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'car_color',
+            'type' => 'text',
+        ]);
     }
 }

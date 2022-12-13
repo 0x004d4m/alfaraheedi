@@ -26,9 +26,18 @@ class OrderCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Order::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/orders');
-        CRUD::setEntityNameStrings('order', 'orders');
+        if (!backpack_user()->can('View Orders'))
+        {
+            abort(403, 'Access denied');
+        }
+
+        if (!backpack_user()->can('Manage Orders'))
+        {
+            $this->crud->denyAccess(['create','delete','update']);
+        }
+        $this->crud->setModel('App\Models\Order');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/orders');
+        $this->crud->setEntityNameStrings('order', 'orders');
     }
 
     /**
