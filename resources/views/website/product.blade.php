@@ -70,8 +70,6 @@
                         <div class="nav nav-tabs " id="nav-tab" role="tablist">
                             <a class="nav-link active" id="nav-one-tab" data-bs-toggle="tab" href="#nav-one"
                                 role="tab" aria-controls="nav-one" aria-selected="true">{{__('content.Description')}}</a>
-                            <a class="nav-link" id="nav-two-tab" data-bs-toggle="tab" href="#nav-two" role="tab"
-                                aria-controls="nav-two" aria-selected="false">{{__('content.Review')}}</a>
                         </div>
                     </nav>
                     <!--End Nav Button  -->
@@ -95,16 +93,6 @@
                     </div>
                     <div class="col-md-6">
                         <p>{!! $Product->description!!}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
-                <!-- Tab 2 -->
-                <div class="row">
-                    <div class="offset-xl-1 col-lg-9">
-                        <p>
-                            Comming Soon
-                        </p>
                     </div>
                 </div>
             </div>
