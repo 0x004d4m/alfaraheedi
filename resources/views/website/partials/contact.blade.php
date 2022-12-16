@@ -520,7 +520,7 @@
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                     <div class="media-body">
-                        <p dir="ltr"><b style="color:black!important;font-size:16px;" >+966 5 6444 2238</b></p>
+                        <h3 style="font-family:unset"><span dir="ltr">+966 5 6444 2238</span></h3>
                         <p>{{__('content.Mon to Fri 9am to 6pm')}}</p>
                     </div>
                 </div>
