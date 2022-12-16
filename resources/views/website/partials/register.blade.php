@@ -46,7 +46,7 @@
             </div>
             <div class="single-input-fields">
                 <label style="text-align: {{__('content.dir2')}};">{{__('content.Phone Number')}}</label>
-                <input required type="number" name="phone" placeholder="{{__('content.Phone Number')}}" value="@isset($Request){{$Request['phone']}}@endisset">
+                <input required type="number" name="phone" placeholder="{{__('content.Phone Number2')}}" value="@isset($Request){{$Request['phone']}}@endisset">
                 @isset($Error)
                     @isset($Error->phone)
                         <small class="text-danger">{{ $Error->phone[0] }}</small>
