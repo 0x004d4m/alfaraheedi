@@ -101,19 +101,16 @@
                                             @endif
                                             @if ($Product->stock > 0)
                                                 <div class="price">
-                                                    <span>{{__('content.In Stock')}}: {{$Product->stock}}</span>
+                                                    <span class="text-success">{{__('content.In Stock')}}</span>
                                                 </div>
                                             @else
                                                 <div class="price">
-                                                    <span>{{__('content.Out Of Stock')}}</span>
+                                                    <span class="text-danger">{{__('content.Out Of Stock')}}</span>
                                                 </div>
                                             @endif
                                             <div class="properties-footer d-flex justify-content-between align-items-center">
                                                 <div class="price">
                                                     <span>{{$Product->price}} {{__('content.SR')}}</span>
-                                                </div>
-                                                <div class="review">
-                                                    <p>(<span>0</span> {{__('content.Reviews')}})</p>
                                                 </div>
                                             </div>
                                         </div>
