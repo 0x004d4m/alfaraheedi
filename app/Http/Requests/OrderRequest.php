@@ -25,7 +25,8 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'driver_id' => 'nullable',
+            'order_status_id' => 'required'
         ];
     }
 

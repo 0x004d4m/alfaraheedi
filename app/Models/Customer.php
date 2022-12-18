@@ -32,6 +32,9 @@ class Customer extends Model
     ];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $appends = [
+        'full_name'
+    ];
 
     /*
     |--------------------------------------------------------------------------
@@ -62,4 +65,9 @@ class Customer extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+
+    public function getFullNameAttribute($value)
+    {
+        return $this->attributes['first_name'].' '.$this->attributes['last_name'];
+    }
 }

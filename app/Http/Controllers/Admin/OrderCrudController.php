@@ -4,26 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\OrderRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Backpack\CRUD\app\Library\Widget;
 
-/**
- * Class OrderCrudController
- * @package App\Http\Controllers\Admin
- * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
- */
 class OrderCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
-    /**
-     * Configure the CrudPanel object. Apply settings to all operations.
-     *
-     * @return void
-     */
     public function setup()
     {
         if (!backpack_user()->can('View Orders'))
@@ -40,50 +28,142 @@ class OrderCrudController extends CrudController
         $this->crud->setEntityNameStrings('order', 'orders');
     }
 
-    /**
-     * Define what happens when the List operation is loaded.
-     *
-     * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
-     * @return void
-     */
     protected function setupListOperation()
     {
 
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'text',
+            'label' => 'ID',
+        ]);
 
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
-         */
+        $this->crud->addColumn([
+            'label' => "Order Status",
+            'type' => "select",
+            'name' => 'order_status_id',
+            'entity' => 'orderStatus',
+            'attribute' => "name_".app()->getLocale(),
+            'model' => 'App\Models\OrderStatus'
+        ]);
+
+        $this->crud->addColumn([
+            'label' => "Customer",
+            'type' => "select",
+            'name' => 'customer_id',
+            'entity' => 'customer',
+            'attribute' => "full_name",
+            'model' => 'App\Models\Customer'
+        ]);
+
+        $this->crud->addColumn([
+            'label' => "Driver",
+            'type' => "select",
+            'name' => 'driver_id',
+            'entity' => 'driver',
+            'attribute' => "full_name",
+            'model' => 'App\Models\Driver'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'address',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'type' => 'text',
+        ]);
     }
 
-    /**
-     * Define what happens when the Create operation is loaded.
-     *
-     * @see https://backpackforlaravel.com/docs/crud-operation-create
-     * @return void
-     */
-    protected function setupCreateOperation()
+    protected function setupShowOperation()
     {
-        CRUD::setValidation(OrderRequest::class);
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'text',
+            'label' => 'ID',
+        ]);
 
+        $this->crud->addColumn([
+            'label' => "Order Status",
+            'type' => "select",
+            'name' => 'order_status_id',
+            'entity' => 'orderStatus',
+            'attribute' => "name_".app()->getLocale(),
+            'model' => 'App\Models\OrderStatus'
+        ]);
 
+        $this->crud->addColumn([
+            'label' => "Customer",
+            'type' => "select",
+            'name' => 'customer_id',
+            'entity' => 'customer',
+            'attribute' => "full_name",
+            'model' => 'App\Models\Customer'
+        ]);
 
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
-         */
+        $this->crud->addColumn([
+            'label' => "Driver",
+            'type' => "select",
+            'name' => 'driver_id',
+            'entity' => 'driver',
+            'attribute' => "full_name",
+            'model' => 'App\Models\Driver'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'address',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'type' => 'text',
+        ]);
+
+        Widget::add([
+            'type'               => 'relation_table',
+            'name'               => 'orderItems',
+            'label'              => 'Order Items',
+            'button_create'      => false,
+            'buttons'      => false,
+            'relation_attribute' => 'order_id',
+            'backpack_crud'  => 'order-item','columns' => [
+                [
+                    'label' => 'Product',
+                    'name'  => 'product.name_'.app()->getLocale(),
+                ],
+                [
+                    'label' => 'Quantity',
+                    'name'  => 'quantity',
+                ],
+                [
+                    'label' => 'Price',
+                    'name'  => 'price',
+                ],
+            ],
+        ])->to('after_content');
     }
 
-    /**
-     * Define what happens when the Update operation is loaded.
-     *
-     * @see https://backpackforlaravel.com/docs/crud-operation-update
-     * @return void
-     */
     protected function setupUpdateOperation()
     {
-        $this->setupCreateOperation();
+        $this->crud->setValidation(OrderRequest::class);
+
+        $this->crud->addField([
+            'label' => "Driver",
+            'type' => "relationship",
+            'name' => 'driver_id',
+            'entity' => 'driver',
+            'attribute' => "full_name",
+            'model' => 'App\Models\Driver',
+        ]);
+
+        $this->crud->addField([
+            'label' => "Order Status",
+            'type' => "relationship",
+            'name' => 'order_status_id',
+            'entity' => 'orderStatus',
+            'attribute' => "name_".app()->getLocale(),
+            'model' => 'App\Models\OrderStatus',
+        ]);
     }
 }

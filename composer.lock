@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c7d3787be264ae6386ae51ca4bb7483",
+    "content-hash": "d33335e934942c43292ba901a587cb3c",
     "packages": [
         {
             "name": "backpack/crud",
@@ -1829,6 +1829,67 @@
                 }
             ],
             "time": "2022-05-21T17:30:32+00:00"
+        },
+        {
+            "name": "izica/relations-widgets-for-backpack",
+            "version": "3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/izica/relations-widgets-for-backpack.git",
+                "reference": "87dcc57d4fb94c2802ea43d537d403af80c976a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/izica/relations-widgets-for-backpack/zipball/87dcc57d4fb94c2802ea43d537d403af80c976a8",
+                "reference": "87dcc57d4fb94c2802ea43d537d403af80c976a8",
+                "shasum": ""
+            },
+            "require": {
+                "backpack/crud": "^4.0|^4.1.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "izica\\RelationsWidgets\\RelationsWidgetsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "izica\\RelationsWidgets\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Artyom Golovarchuk",
+                    "email": "artemiztomska@gmail.com",
+                    "homepage": "https://github.com/izica/relations-widgets-for-backpack"
+                }
+            ],
+            "description": "Widgets for preview model relations in laravel backpack",
+            "homepage": "https://github.com/izica/relations-widgets-for-backpack",
+            "keywords": [
+                "Backpack for Laravel",
+                "addon",
+                "admin panel",
+                "backpack",
+                "laravel",
+                "laravel backpack",
+                "plugin",
+                "relations",
+                "widget",
+                "widgets"
+            ],
+            "support": {
+                "issues": "https://github.com/izica/relations-widgets-for-backpack/issues",
+                "source": "https://github.com/izica/relations-widgets-for-backpack/tree/3.2"
+            },
+            "time": "2022-05-08T15:41:21+00:00"
         },
         {
             "name": "laravel/framework",
@@ -9096,5 +9157,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

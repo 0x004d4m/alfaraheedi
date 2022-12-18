@@ -12,6 +12,7 @@
         "backpack/permissionmanager": "^6.0",
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "^2.7",
+        "izica/relations-widgets-for-backpack": "^3.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7"
