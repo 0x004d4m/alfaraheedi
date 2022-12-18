@@ -32,10 +32,9 @@
                             <div class="footer-tittle">
                                 <!-- social -->
                                 <div class="footer-social">
-                                    <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                    @foreach (App\Models\Social::get() as $Social)
+                                        <a href="{{$Social->link}}"><i class="{{$Social->icon}}"></i></a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
