@@ -26,7 +26,7 @@
                                     </div>
                                     <p>(120 Review)</p>
                                 </div>
-                                <a href="#" class="white-btn mr-10">Add to Cart</a>
+                                <a href="#" class="white-btn mr-10">{{__('content.AddtoCart')}}</a>
                                 <a href="#" class="border-btn share-btn"><i class="fas fa-share-alt"></i></a>
                             </div>
                         </div>

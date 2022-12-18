@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8">
                 <div class="section-tittle text-center mb-55">
-                    <h2>{{__('content.Best Selling')}}</h2>
+                    <h2>{{__('content.BestSelling')}}</h2>
                 </div>
             </div>
         </div>
@@ -25,11 +25,11 @@
                                     @endif
                                     @if ($Product->stock > 0)
                                         <div class="price">
-                                            <span class="text-success">{{__('content.In Stock')}}</span>
+                                            <span class="text-success">{{__('content.InStock')}}</span>
                                         </div>
                                     @else
                                         <div class="price">
-                                            <span class="text-danger">{{__('content.Out Of Stock')}}</span>
+                                            <span class="text-danger">{{__('content.OutOfStock')}}</span>
                                         </div>
                                     @endif
                                     <div class="properties-footer d-flex justify-content-between align-items-center">

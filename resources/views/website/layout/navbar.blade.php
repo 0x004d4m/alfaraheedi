@@ -52,9 +52,9 @@
                                         <li><a href="/">{{__('content.Home')}}</a></li>
                                         <li><a href="/store">{{__('content.Store')}}</a></li>
                                         <li><a href="/#about">{{__('content.About')}}</a></li>
-                                        <li><a href="/#best_selling">{{__('content.Best Selling')}}</a></li>
+                                        <li><a href="/#best_selling">{{__('content.BestSelling')}}</a></li>
                                         <li><a href="/#latest">{{__('content.Latest')}}</a></li>
-                                        <li><a href="/#contact_us">{{__('content.Contact Us')}}</a></li>
+                                        <li><a href="/#contact_us">{{__('content.ContactUs')}}</a></li>
                                     </ul>
                                 </nav>
                             </div>

@@ -463,7 +463,7 @@
         </div> -->
         <div class="row" dir="{{Session::get('locale') == 'ar'?'rtl':'ltr'}}">
             <div class="col-12">
-                <h2 class="contact-title">{{__('content.Get in Touch')}}</h2>
+                <h2 class="contact-title">{{__('content.GetinTouch')}}</h2>
             </div>
             @if (Session::has('Success'))
                 <div class="col-12">
@@ -479,28 +479,28 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" required
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter Message')}}'" placeholder="{{__('content.Enter Message')}}"></textarea>
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.EnterMessage')}}'" placeholder="{{__('content.EnterMessage')}}"></textarea>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <input class="form-control valid" name="name" id="name" type="text" required
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter your name')}}'"
-                                    placeholder="{{__('content.Enter your name')}}">
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enteryourname')}}'"
+                                    placeholder="{{__('content.Enteryourname')}}">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <input class="form-control valid" name="email" id="email" type="email" required
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter email address')}}'"
-                                    placeholder="{{__('content.Enter email address')}}">
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enteremailaddress')}}'"
+                                    placeholder="{{__('content.Enteremailaddress')}}">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <input class="form-control" name="subject" id="subject" type="text" required
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.Enter Subject')}}'"
-                                    placeholder="{{__('content.Enter Subject')}}">
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = '{{__('content.EnterSubject')}}'"
+                                    placeholder="{{__('content.EnterSubject')}}">
                             </div>
                         </div>
                     </div>
@@ -521,14 +521,14 @@
                     <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                     <div class="media-body">
                         <h3 style="font-family:unset"><span dir="ltr">+966 5 6444 2238</span></h3>
-                        <p>{{__('content.Mon to Fri 9am to 6pm')}}</p>
+                        <p>{{__('content.MontoFri9amto6pm')}}</p>
                     </div>
                 </div>
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-email"></i></span>
                     <div class="media-body">
                         <h3>info@smartcore-ksa.com</h3>
-                        <p>{{__('content.Send us your query anytime!')}}</p>
+                        <p>{{__('content.Sendusyourqueryanytime')}}</p>
                     </div>
                 </div>
             </div>

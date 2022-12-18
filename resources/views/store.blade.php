@@ -17,7 +17,7 @@
                                 <!-- select-Categories  -->
                                 <div class="select-Categories pb-30">
                                     <div class="small-tittle mb-20">
-                                        <h4>{{__('content.Filter by Category')}}</h4>
+                                        <h4>{{__('content.FilterbyCategory')}}</h4>
                                     </div>
                                     @foreach ($Categories as $Category)
                                         @if (Request::has('category_id') && in_array($Category->id,Request::get('category_id')))
@@ -39,7 +39,7 @@
                             <!-- Range Slider Start -->
                             {{-- <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
                                 <div class="small-tittle">
-                                    <h4>{{__('content.Filter by Price')}}</h4>
+                                    <h4>{{__('content.FilterbyPrice')}}</h4>
                                 </div>
                                 <div class="widgets_inner">
                                     <div class="range_item">
@@ -60,7 +60,7 @@
                                 <!-- select-Categories start -->
                                 <div class="select-Categories">
                                     <div class="small-tittle mb-20">
-                                        <h4>{{__('content.Filter by Author Name')}}</h4>
+                                        <h4>{{__('content.FilterbyAuthorName')}}</h4>
                                     </div>
                                     @foreach ($Authours as $Authour)
                                         @if (Request::has('authour_id') && in_array($Authour->id,Request::get('authour_id')))
@@ -101,11 +101,11 @@
                                             @endif
                                             @if ($Product->stock > 0)
                                                 <div class="price">
-                                                    <span class="text-success">{{__('content.In Stock')}}</span>
+                                                    <span class="text-success">{{__('content.InStock')}}</span>
                                                 </div>
                                             @else
                                                 <div class="price">
-                                                    <span class="text-danger">{{__('content.Out Of Stock')}}</span>
+                                                    <span class="text-danger">{{__('content.OutOfStock')}}</span>
                                                 </div>
                                             @endif
                                             <div class="properties-footer d-flex justify-content-between align-items-center">

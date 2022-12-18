@@ -5,7 +5,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12">
                 <!-- Section Tittle -->
                 <div class="section-tittle  mb-40">
-                    <h2>{{__('content.Latest Published items')}}</h2>
+                    <h2>{{__('content.LatestPublisheditems')}}</h2>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12">
@@ -46,11 +46,11 @@
                                             @endif
                                             @if ($Product->stock > 0)
                                                 <div class="price">
-                                                    <span class="text-success">{{__('content.In Stock')}}</span>
+                                                    <span class="text-success">{{__('content.InStock')}}</span>
                                                 </div>
                                             @else
                                                 <div class="price">
-                                                    <span class="text-danger">{{__('content.Out Of Stock')}}</span>
+                                                    <span class="text-danger">{{__('content.OutOfStock')}}</span>
                                                 </div>
                                             @endif
                                             <div class="properties-footer d-flex justify-content-between align-items-center">

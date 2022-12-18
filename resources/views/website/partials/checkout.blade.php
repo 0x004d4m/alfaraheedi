@@ -48,11 +48,11 @@
                     <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                         <div class="col-md-6 form-group p_star">
                             <input type="text" class="form-control" id="first" name="name" />
-                            <span class="placeholder" data-placeholder="First name"></span>
+                            <span class="placeholder" data-placeholder="{{__('content.Firstname')}}"></span>
                         </div>
                         <div class="col-md-6 form-group p_star">
                             <input type="text" class="form-control" id="last" name="name" />
-                            <span class="placeholder" data-placeholder="Last name"></span>
+                            <span class="placeholder" data-placeholder="{{__('content.Lastname')}}"></span>
                         </div>
                         <div class="col-md-12 form-group">
                             <input type="text" class="form-control" id="company" name="company"
@@ -60,11 +60,11 @@
                         </div>
                         <div class="col-md-6 form-group p_star">
                             <input type="text" class="form-control" id="number" name="number" />
-                            <span class="placeholder" data-placeholder="Phone number"></span>
+                            <span class="placeholder" data-placeholder="{{__('content.PhoneNumber')}}"></span>
                         </div>
                         <div class="col-md-6 form-group p_star">
                             <input type="text" class="form-control" id="email" name="compemailany" />
-                            <span class="placeholder" data-placeholder="Email Address"></span>
+                            <span class="placeholder" data-placeholder="{{__('content.EmailAddress')}}"></span>
                         </div>
                         <div class="col-md-12 form-group p_star">
                             <select class="country_select">

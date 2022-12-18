@@ -30,11 +30,11 @@
                                 @endif
                                 @if ($Product->stock > 0)
                                     <div class="price">
-                                        <span class="text-success">{{__('content.In Stock')}}</span>
+                                        <span class="text-success">{{__('content.InStock')}}</span>
                                     </div>
                                 @else
                                     <div class="price">
-                                        <span class="text-danger">{{__('content.Out Of Stock')}}</span>
+                                        <span class="text-danger">{{__('content.OutOfStock')}}</span>
                                     </div>
                                 @endif
                                 <div class="properties-footer d-flex justify-content-between align-items-center">
@@ -45,7 +45,7 @@
                                 <form class="d-flex" method="post" action="/cart">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{$Product->id}}">
-                                    <button type="submit" name="addToCart" class="btn btn-white text-dark mr-10 mb-2 mx-2 d-flex justify-content-between" style="background-color: white; color: black!important;">{{__('content.Add to Cart')}}</button>
+                                    <button type="submit" name="addToCart" class="btn btn-white text-dark mr-10 mb-2 mx-2 d-flex justify-content-between" style="background-color: white; color: black!important;">{{__('content.AddtoCart')}}</button>
                                     <input type="number" name="quantity" class="form-control mb-2" value="0" min="1" max="{{$Product->stock}}" required style="width: 30%!important;">
                                 </form>
                                 {{-- <a href="#" class="border-btn share-btn"><i class="fas fa-share-alt"></i></a> --}}

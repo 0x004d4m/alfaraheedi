@@ -4,8 +4,8 @@
         @csrf
         <!-- Login Heading -->
         <div class="register-heading">
-            <span>{{__('content.Sign Up')}}</span>
-            <p>{{__('content.Sign Up2')}}</p>
+            <span>{{__('content.SignUp')}}</span>
+            <p>{{__('content.SignUp2')}}</p>
             @if (Session::has('Error'))
                 <div class="alert alert-danger" role="alert">
                     {{ Session::get('Error') }}
@@ -18,8 +18,8 @@
         <!-- Single Input Fields -->
         <div class="input-box">
             <div class="single-input-fields">
-                <label style="text-align: {{__('content.dir2')}};">{{__('content.First name')}}</label>
-                <input required type="text" name="first_name" placeholder="{{__('content.First name')}}" value="@isset($Request){{$Request['first_name']}}@endisset">
+                <label style="text-align: {{__('content.dir2')}};">{{__('content.Firstname')}}</label>
+                <input required type="text" name="first_name" placeholder="{{__('content.Firstname')}}" value="@isset($Request){{$Request['first_name']}}@endisset">
                 @isset($Error)
                     @isset($Error->first_name)
                         <small class="text-danger">{{ $Error->first_name[0] }}</small>
@@ -27,8 +27,8 @@
                 @endisset
             </div>
             <div class="single-input-fields">
-                <label style="text-align: {{__('content.dir2')}};">{{__('content.Last name')}}</label>
-                <input required type="text" name="last_name" placeholder="{{__('content.Last name')}}" value="@isset($Request){{$Request['last_name']}}@endisset">
+                <label style="text-align: {{__('content.dir2')}};">{{__('content.Lastname')}}</label>
+                <input required type="text" name="last_name" placeholder="{{__('content.Lastname')}}" value="@isset($Request){{$Request['last_name']}}@endisset">
                 @isset($Error)
                     @isset($Error->last_name)
                         <small class="text-danger">{{ $Error->last_name[0] }}</small>
@@ -36,8 +36,8 @@
                 @endisset
             </div>
             <div class="single-input-fields">
-                <label style="text-align: {{__('content.dir2')}};">{{__('content.Email Address')}}</label>
-                <input required type="email" name="email" placeholder="{{__('content.Email Address')}}" value="@isset($Request){{$Request['email']}}@endisset">
+                <label style="text-align: {{__('content.dir2')}};">{{__('content.EmailAddress')}}</label>
+                <input required type="email" name="email" placeholder="{{__('content.EmailAddress')}}" value="@isset($Request){{$Request['email']}}@endisset">
                 @isset($Error)
                     @isset($Error->email)
                         <small class="text-danger">{{ $Error->email[0] }}</small>
@@ -45,8 +45,8 @@
                 @endisset
             </div>
             <div class="single-input-fields">
-                <label style="text-align: {{__('content.dir2')}};">{{__('content.Phone Number')}}</label>
-                <input required type="number" name="phone" placeholder="{{__('content.Phone Number2')}}" value="@isset($Request){{$Request['phone']}}@endisset">
+                <label style="text-align: {{__('content.dir2')}};">{{__('content.PhoneNumber')}}</label>
+                <input required type="number" name="phone" placeholder="{{__('content.PhoneNumber2')}}" value="@isset($Request){{$Request['phone']}}@endisset">
                 @isset($Error)
                     @isset($Error->phone)
                         <small class="text-danger">{{ $Error->phone[0] }}</small>
@@ -81,8 +81,8 @@
                 @endisset
             </div>
             <div class="single-input-fields">
-                <label style="text-align: {{__('content.dir2')}};">{{__('content.Confirm Password')}}</label>
-                <input required type="password" name="password_confirmation" placeholder="{{__('content.Confirm Password')}}">
+                <label style="text-align: {{__('content.dir2')}};">{{__('content.ConfirmPassword')}}</label>
+                <input required type="password" name="password_confirmation" placeholder="{{__('content.ConfirmPassword')}}">
                 @isset($Error)
                     @isset($Error->password_confirmation)
                         <small class="text-danger">{{ $Error->password_confirmation[0] }}</small>
@@ -92,8 +92,8 @@
         </div>
         <!-- form Footer -->
         <div class="register-footer">
-            <p> {{__('content.Already have an account')}} <a href="/login"> {{__('content.Login')}}</a> {{__('content.Here')}}</p>
-            <button type="submit" name="register" class="submit-btn3">{{__('content.Sign Up')}}</button>
+            <p> {{__('content.Alreadyhaveanaccount')}} <a href="/login"> {{__('content.Login')}}</a> {{__('content.Here')}}</p>
+            <button type="submit" name="register" class="submit-btn3">{{__('content.SignUp')}}</button>
         </div>
     </form>
 </div>

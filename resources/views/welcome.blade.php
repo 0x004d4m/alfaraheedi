@@ -10,6 +10,8 @@
 
 @include('website.partials.latest')
 
+@include('website.partials.partners')
+
 @include('website.partials.contact')
 
 @endsection

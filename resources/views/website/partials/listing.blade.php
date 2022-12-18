@@ -39,7 +39,7 @@
                         <!-- Range Slider Start -->
                         <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
                             <div class="small-tittle">
-                                <h4>Filter by Price</h4>
+                                <h4>{{__('content.FilterbyPrice')}}</h4>
                             </div>
                             <div class="widgets_inner">
                                 <div class="range_item">
@@ -102,7 +102,7 @@
                         <!-- select-Categories start -->
                         <div class="select-Categories">
                             <div class="small-tittle mb-20">
-                                <h4>Filter by Author Name</h4>
+                                <h4>{{__('content.FilterbyAuthorName')}}</h4>
                             </div>
                             <label class="container">Buster Hyman
                                 <input type="checkbox">

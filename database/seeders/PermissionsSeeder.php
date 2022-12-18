@@ -26,7 +26,11 @@ class PermissionsSeeder extends Seeder
             // ["id"=>14,"name"=>"Manage Contact Requests","guard_name"=>"web"],
             // ["id"=>15,"name"=>"Manage Authentication","guard_name"=>"web"],
             // ["id"=>16,"name"=>"Manage Logs","guard_name"=>"web"],
-            ["id"=>17,"name"=>"Manage Languages","guard_name"=>"web"],
+            // ["id"=>17,"name"=>"Manage Languages","guard_name"=>"web"],
+            ["id"=>18,"name"=>"View Partners","guard_name"=>"web"],
+            ["id"=>19,"name"=>"Manage Partners","guard_name"=>"web"],
+            ["id"=>20,"name"=>"View Socials","guard_name"=>"web"],
+            ["id"=>21,"name"=>"Manage Socials","guard_name"=>"web"],
         ]);
 
         // DB::table('roles')->insert([
@@ -54,7 +58,11 @@ class PermissionsSeeder extends Seeder
             // ["permission_id"=>14,"role_id"=>1],
             // ["permission_id"=>15,"role_id"=>1],
             // ["permission_id"=>16,"role_id"=>1],
-            ["permission_id"=>17,"role_id"=>1],
+            // ["permission_id"=>17,"role_id"=>1],
+            ["permission_id"=>18,"role_id"=>1],
+            ["permission_id"=>19,"role_id"=>1],
+            ["permission_id"=>20,"role_id"=>1],
+            ["permission_id"=>21,"role_id"=>1],
         ]);
     }
 }

@@ -22,6 +22,9 @@
 @if(backpack_user()->can('View Contact Requests'))
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('contact-request') }}"><i class="nav-icon la la-question"></i> Contact requests</a></li>
 @endif
+@if(backpack_user()->can('View Partners'))
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('partner') }}"><i class="nav-icon la la-question"></i> Partners</a></li>
+@endif
 @if(backpack_user()->can('Manage Authentication'))
     <!-- Users, Roles, Permissions -->
     <li class="nav-item nav-dropdown">
@@ -44,3 +47,5 @@
         </ul>
     </li>
 @endif
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('social') }}"><i class="nav-icon la la-question"></i> Socials</a></li>
