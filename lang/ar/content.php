@@ -76,4 +76,5 @@ return [
     'orderDetails'=>'تفاصيل الطلب',
     'orderItems'=>'البضائع بالطلب',
     'Partners'=>'وكلائنا',
+    'noOrdersYet' => 'لا يوجد طلبات',
 ];

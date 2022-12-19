@@ -76,4 +76,5 @@ return [
     'slider2' => 'Whenever you read you will limp into the sky of glory.',
     'dir2' => 'left',
     'dir' => 'ltr',
+    'noOrdersYet' => 'No Orders Yet',
 ];
