@@ -1,7 +1,7 @@
 @if (App\Models\Partner::count() > 0)
 
     <!-- Best Selling start -->
-    <div id='best_selling' class="best-selling section-bg">
+    <div id='partners' class="best-selling">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">

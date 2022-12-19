@@ -24,7 +24,10 @@
                                         <li><a href="tel:+966 5 6444 2238"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
                                         <li><a href="mailto:info@smartcore-ksa.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                                         @if (Session::has('CustomerToken'))
-                                            <li><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                            @php
+                                                $CartItems = App\Models\OrderItem::where('customer_id',App\Models\CustomerToken::where('token', Session::get('CustomerToken'))->first()->customer_id)->whereNull('order_id')->count();
+                                            @endphp
+                                            <li><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+<span class="visually-hidden">unread messages</span></span></i></a></li>
                                             <li><a href="/logout" class="btn header-btn">{{__('content.signout')}}</a></li>
                                         @else
                                             <li><a href="/login" class="btn header-btn">{{__('content.signin')}}</a></li>
@@ -51,6 +54,9 @@
                                     <ul id="navigation">
                                         <li><a href="/">{{__('content.Home')}}</a></li>
                                         <li><a href="/store">{{__('content.Store')}}</a></li>
+                                        @if (Session::has('CustomerToken'))
+                                            <li><a href="/order">{{__('content.Orders')}}</a></li>
+                                        @endif
                                         <li><a href="/#about">{{__('content.About')}}</a></li>
                                         <li><a href="/#best_selling">{{__('content.BestSelling')}}</a></li>
                                         <li><a href="/#latest">{{__('content.Latest')}}</a></li>

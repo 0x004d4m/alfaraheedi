@@ -43,7 +43,7 @@ class OrderController extends Controller
                 'stock'=>($stock<0)?0:$stock
             ]);
         }
-        return redirect('/orders');
+        return redirect('/order');
     }
 
     public function update(Request $request, $id){
