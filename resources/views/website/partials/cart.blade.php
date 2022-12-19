@@ -66,13 +66,13 @@
                             <td>
                                 <div class="shipping_box">
                                     <label>{{__('content.Address')}}</label>
-                                    <input class="post_code" type="text" placeholder="Address" value="{{$Address}}" readonly/>
+                                    <input class="post_code" type="text" placeholder="Address" name="address" value="{{$Address}}" form="Checkout"/>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <form method="POST" action="/order"  class="checkout_btn_inner float-right">
+                <form method="POST" action="/order" id="Checkout" class="checkout_btn_inner float-right">
                     @csrf
                     <button type="submit" class="btn checkout_btn">{{__('content.Checkout')}}</button>
                 </form>

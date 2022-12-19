@@ -28,7 +28,7 @@ class OrderController extends Controller
             'order_status_id'=>1,
             'customer_id'=>$request->customer_id,
             'driver_id'=>null,
-            'address'=>$Customer->address,
+            'address'=>$request->address,
         ]);
 
         $OrderItems = OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get();
