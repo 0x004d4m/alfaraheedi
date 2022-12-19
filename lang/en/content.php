@@ -52,6 +52,7 @@ return [
     'Partners' => 'Partners',
     'Password' => 'Password',
     'PhoneNumber' => 'Phone Number',
+    'Image'=>'Profile Image',
     'PhoneorEmailAddress' => 'Phone or Email Address',
     'Price' => 'Price',
     'Product' => 'Product',

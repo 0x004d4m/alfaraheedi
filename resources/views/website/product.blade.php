@@ -46,7 +46,7 @@
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{$Product->id}}">
                                     <button type="submit" name="addToCart" class="btn btn-white text-dark mr-10 mb-2 mx-2 d-flex justify-content-between" style="background-color: white; color: black!important;">{{__('content.AddtoCart')}}</button>
-                                    <input type="number" name="quantity" class="form-control mb-2" value="0" min="1" max="{{$Product->stock}}" required style="width: 30%!important;">
+                                    <input type="number" name="quantity" class="form-control mb-2" placeholder="{{__('content.Quantity')}}" min="1" max="{{$Product->stock}}" required style="width: 30%!important;">
                                 </form>
                                 {{-- <a href="#" class="border-btn share-btn"><i class="fas fa-share-alt"></i></a> --}}
                             </div>

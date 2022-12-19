@@ -33,7 +33,7 @@ class OrderController extends Controller
         $OrderItems = OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->update([
             'order_id'=>$Order->id
         ]);
-        return view('/orders');
+        return redirect('/orders');
     }
 
     public function update(Request $request, $id){
