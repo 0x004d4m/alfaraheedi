@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -30,9 +31,18 @@ class OrderController extends Controller
             'address'=>$Customer->address,
         ]);
 
-        $OrderItems = OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->update([
-            'order_id'=>$Order->id
-        ]);
+        $OrderItems = OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get();
+
+        foreach($OrderItems as $OrderItem){
+            $OrderItem->update([
+                'order_id'=>$Order->id
+            ]);
+            $Product = Product::where('id', $OrderItem->product_id)->first();
+            $stock = $Product->stock - $OrderItem->quantity;
+            $Product->update([
+                'stock'=>($stock<0)?0:$stock
+            ]);
+        }
         return redirect('/orders');
     }
 
