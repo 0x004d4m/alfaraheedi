@@ -16,7 +16,7 @@ class OrderController extends Controller
         $Orders = Order::with([
             'orderStatus:id,name_'.Session::get('locale').' as name',
             'orderItems:id,price,quantity,order_id,product_id',
-        ])->paginate();
+        ])->where('customer_id', $request->customer_id)->paginate();
         return view('customer.orders',[
             "Orders"=>$Orders,
         ]);
