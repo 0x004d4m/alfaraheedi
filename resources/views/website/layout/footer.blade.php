@@ -21,7 +21,7 @@
                             <div class="footer-tittle">
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>{{__('content.footer')}}</p>
+                                        <p>{{ __('content.footer') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                 <!-- social -->
                                 <div class="footer-social">
                                     @foreach (App\Models\Social::get() as $Social)
-                                        <a href="{{$Social->link}}"><i class="{{$Social->icon}}"></i></a>
+                                        <a href="{{ $Social->link }}"><i class="{{ $Social->icon }}"></i></a>
                                     @endforeach
                                 </div>
                             </div>
@@ -72,7 +72,9 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            {!!Session::get('locale') == 'ar'?'<iframe width="560" height="315" src="https://www.youtube.com/embed/duy6Hvo3f8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>':'<iframe width="560" height="315" src="https://www.youtube.com/embed/Kn4_ZbbciQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'!!}
+            {!! Session::get('locale') == 'ar'
+                ? '<iframe width="560" height="315" src="https://www.youtube.com/embed/duy6Hvo3f8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                : '<iframe width="560" height="315" src="https://www.youtube.com/embed/Kn4_ZbbciQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' !!}
         </div>
     </div>
 </div>
