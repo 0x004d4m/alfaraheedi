@@ -27,7 +27,7 @@
                                             @php
                                                 $CartItems = App\Models\OrderItem::where('customer_id',App\Models\CustomerToken::where('token', Session::get('CustomerToken'))->first()->customer_id)->whereNull('order_id')->count();
                                             @endphp
-                                            <li><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+<span class="visually-hidden">unread messages</span></span></i></a></li>
+                                            <li><a href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{$CartItems}}<span class="visually-hidden">unread messages</span></span></i></a></li>
                                             <li><a href="/logout" class="btn header-btn">{{__('content.signout')}}</a></li>
                                         @else
                                             <li><a href="/login" class="btn header-btn">{{__('content.signin')}}</a></li>
