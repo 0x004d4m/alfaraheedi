@@ -74,7 +74,7 @@
                 </table>
                 <form method="POST" action="/order" id="Checkout" class="checkout_btn_inner float-right">
                     @csrf
-                    <button type="submit" class="btn checkout_btn">{{__('content.Checkout')}}</button>
+                    <button type="submit" class="btn checkout_btn" @if(count($OrderItems)==0) disabled @endif>{{__('content.Checkout')}}</button>
                 </form>
             </div>
         </div>
