@@ -2,10 +2,10 @@
 
 namespace App\Filters\Products;
 
-class PriceFilter
+class IcpnFilter
 {
     public function filter($builder, $value)
     {
-        return $builder->whereBetween('price', [$value[0], $value[1]]);
+        return $builder->where('icpn', 'LIKE', "%$value%");
     }
 }

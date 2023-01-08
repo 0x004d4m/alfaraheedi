@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="header-bottom  header-sticky">
+            <div class="header-bottom  header-sticky" style="background-color: #EAF6F6">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-12">

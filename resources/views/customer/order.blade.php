@@ -16,12 +16,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php
-                                $Total=0;
-                                foreach($Order->orderItems as $item){
-                                    $Total+=($item->quantity * $item->price);
-                                }
-                            @endphp
                             <tr>
                                 <td>
                                     <h5>{{$Order->orderStatus->name}}</h5>
@@ -35,7 +29,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <h5> {{ $Total }} {{__('content.SR')}}</h5>
+                                    <h5> {{ $Order->total }} {{__('content.SR')}}</h5>
                                 </td>
                             </tr>
                         </tbody>
@@ -55,13 +49,14 @@
                             <tr>
                                 <th scope="col">{{__('content.Product')}}</th>
                                 <th scope="col">{{__('content.Price')}}</th>
+                                <th scope="col">{{__('content.Tax')}}</th>
                                 <th scope="col">{{__('content.Quantity')}}</th>
                                 <th scope="col">{{__('content.Total')}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php
-                                $sum=0;
+                                $sum=$Order->delivery_price;
                             @endphp
                             @foreach ($Order->orderItems as $OrderItem)
                                 <tr>
@@ -79,18 +74,31 @@
                                         <h5>{{$OrderItem->price}} {{__('content.SR')}}</h5>
                                     </td>
                                     <td>
+                                        <h5>{{$OrderItem->tax}} %</h5>
+                                    </td>
+                                    <td>
                                         <div class="product_count">
                                             {{$OrderItem->quantity}}
                                         </div>
                                     </td>
                                     <td>
-                                        <h5> {{ ($OrderItem->quantity * $OrderItem->price) }} {{__('content.SR')}}</h5>
+                                        <h5> {{ ($OrderItem->quantity * $OrderItem->price + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100))) }} {{__('content.SR')}}</h5>
                                     </td>
                                 </tr>
                                 @php
-                                    $sum+=($OrderItem->quantity * $OrderItem->price);
+                                    $sum+=($OrderItem->quantity * $OrderItem->price + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100)));
                                 @endphp
                             @endforeach
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <h5>{{__('content.Delivery')}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ ($Order->delivery_price) }} {{__('content.SR')}}</h5>
+                                </td>
+                            </tr>
                             <tr>
                                 <td></td>
                                 <td></td>

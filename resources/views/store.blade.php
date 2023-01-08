@@ -37,23 +37,18 @@
                             @endif
 
                             <!-- Range Slider Start -->
-                            {{-- <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
+                            <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
                                 <div class="small-tittle">
-                                    <h4>{{__('content.FilterbyPrice')}}</h4>
+                                    <h4>{{__('content.FilterbyICPN')}}</h4>
                                 </div>
                                 <div class="widgets_inner">
-                                    <div class="range_item">
-                                        <input type="text" class="js-range-slider"/>
-                                        <div class="d-flex align-items-center">
-                                            <div class="price_value d-flex justify-content-center">
-                                                <input type="text" class="js-input-from" id="amount" readonly  onchange="document.getElementById('filterForm').submit()" />
-                                                <span>to</span>
-                                                <input type="text" class="js-input-to" id="amount" readonly  onchange="document.getElementById('filterForm').submit()" />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @if (Request::has('icpn'))
+                                        <input type="text" class="form-control" name="icpn" value="{{Request::get('icpn')}}"/>
+                                    @else
+                                        <input type="text" class="form-control" name="icpn"/>
+                                    @endif
                                 </div>
-                            </aside> --}}
+                            </aside>
                             <!-- range end -->
 
                             @if (count($Authours)>0)
@@ -100,17 +95,17 @@
                                                 <p><span>{{__('content.Authour')}}:</span> {{$Product->authour->name}}</p>
                                             @endif
                                             @if ($Product->stock > 0)
-                                                <div class="price">
-                                                    <span class="text-success">{{__('content.InStock')}}</span>
+                                                <div>
+                                                    <span style="color: #1C1C1C !important">{{__('content.InStock')}}</span>
                                                 </div>
                                             @else
-                                                <div class="price">
-                                                    <span class="text-danger">{{__('content.OutOfStock')}}</span>
+                                                <div>
+                                                    <span style="color: #1C1C1C !important">{{__('content.OutOfStock')}}</span>
                                                 </div>
                                             @endif
                                             <div class="properties-footer d-flex justify-content-between align-items-center">
                                                 <div class="price">
-                                                    <span>{{$Product->price}} {{__('content.SR')}}</span>
+                                                    <span style="color: #1C1C1C !important">{{$Product->price}} {{__('content.SR')}}</span>
                                                 </div>
                                             </div>
                                         </div>

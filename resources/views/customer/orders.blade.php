@@ -18,12 +18,6 @@
                         </thead>
                         <tbody>
                             @foreach ($Orders as $Order)
-                                @php
-                                    $Total=0;
-                                    foreach($Order->orderItems as $item){
-                                        $Total+=($item->quantity * $item->price);
-                                    }
-                                @endphp
                                 <tr>
                                     <td>
                                         <h5>{{$Order->orderStatus->name}}</h5>
@@ -37,7 +31,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <h5> {{ $Total }} {{__('content.SR')}}</h5>
+                                        <h5> {{ $Order->total }} {{__('content.SR')}}</h5>
                                     </td>
                                     <td>
                                         @if ($Order->order_status_id == 1)

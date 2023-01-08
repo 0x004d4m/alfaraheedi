@@ -6,6 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Hash;
 
 class Customer extends Model
 {
@@ -69,5 +70,10 @@ class Customer extends Model
     public function getFullNameAttribute($value)
     {
         return $this->attributes['first_name'].' '.$this->attributes['last_name'];
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        return $this->attributes['password'] = Hash::make($value);
     }
 }

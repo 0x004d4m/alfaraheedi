@@ -24,17 +24,17 @@
                                         <p><span>{{__('content.Authour')}}:</span> {{$Product->authour->name}}</p>
                                     @endif
                                     @if ($Product->stock > 0)
-                                        <div class="price">
-                                            <span class="text-success">{{__('content.InStock')}}</span>
+                                        <div>
+                                            <span style="color: #1C1C1C !important">{{__('content.InStock')}}</span>
                                         </div>
                                     @else
-                                        <div class="price">
-                                            <span class="text-danger">{{__('content.OutOfStock')}}</span>
+                                        <div>
+                                            <span style="color: #1C1C1C !important">{{__('content.OutOfStock')}}</span>
                                         </div>
                                     @endif
                                     <div class="properties-footer d-flex justify-content-between align-items-center">
                                         <div class="price">
-                                            <span>{{$Product->price}} {{__('content.SR')}}</span>
+                                            <span style="color: #1C1C1C !important">{{$Product->price}} {{__('content.SR')}}</span>
                                         </div>
                                     </div>
                                 </div>

@@ -32,12 +32,15 @@ class Product extends Model
         'description_ar',
         'description_en',
         'price',
+        'tax',
+        'icpn',
         'image1',
         'image2',
         'image3',
         'stock',
         'category_id',
         'authour_id',
+        'publisher_id',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -62,6 +65,11 @@ class Product extends Model
     public function authour()
     {
         return $this->belongsTo(Authour::class);
+    }
+
+    public function publisher()
+    {
+        return $this->belongsTo(Publisher::class);
     }
 
     /*

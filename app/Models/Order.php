@@ -26,6 +26,8 @@ class Order extends Model
         'customer_id',
         'driver_id',
         'address',
+        'delivery_price',
+        'total',
     ];
     // protected $hidden = [];
     // protected $dates = [];

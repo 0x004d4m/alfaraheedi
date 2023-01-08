@@ -27,7 +27,7 @@ class DriverRequest extends FormRequest
         return [
             'first_name' => 'required|min:2|max:255',
             'last_name' => 'required|min:2|max:255',
-            'phone' => ['required','regex:/^(05)\d{8}/i',(request()->route('id')==null)?'unique:drivers,phone':'unique:drivers,phone,'.request()->route('id')],
+            'phone' => ['required',(request()->route('id')==null)?'unique:drivers,phone':'unique:drivers,phone,'.request()->route('id')],
             'car_model' => 'required|min:2|max:255',
             'car_plate' => 'required|min:2|max:255',
             'car_color' => 'required|min:2|max:255',

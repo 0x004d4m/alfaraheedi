@@ -65,6 +65,16 @@ class OrderCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
+            'name' => 'delivery_price',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'total',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
             'name' => 'address',
             'type' => 'text',
         ]);
@@ -81,6 +91,16 @@ class OrderCrudController extends CrudController
             'name' => 'id',
             'type' => 'text',
             'label' => 'ID',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'delivery_price',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'total',
+            'type' => 'text',
         ]);
 
         $this->crud->addColumn([
@@ -139,6 +159,10 @@ class OrderCrudController extends CrudController
                 [
                     'label' => 'Price',
                     'name'  => 'price',
+                ],
+                [
+                    'label' => 'Tax',
+                    'name'  => 'tax',
                 ],
             ],
         ])->to('after_content');

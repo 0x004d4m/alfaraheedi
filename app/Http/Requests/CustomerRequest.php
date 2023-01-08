@@ -30,7 +30,7 @@ class CustomerRequest extends FormRequest
             'first_name' => 'required|min:2|max:255',
             'last_name' => 'required|min:2|max:255',
             'email' => ['required','email',(request()->route('id')==null)?'unique:customers,email':'unique:customers,email,'.request()->route('id')],
-            'phone' => ['required','regex:/^(05)\d{8}/i',(request()->route('id')==null)?'unique:customers,phone':'unique:customers,phone,'.request()->route('id')],
+            'phone' => ['required',(request()->route('id')==null)?'unique:customers,phone':'unique:customers,phone,'.request()->route('id')],
             'address' => ['required','min:3','max:255'],
             'password' => ['nullable','regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/i'],
             'image' => 'nullable',

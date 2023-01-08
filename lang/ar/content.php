@@ -31,7 +31,7 @@ return [
     'OutOfStock' => 'نفذت الكمية',
     'InStock' => 'متوفر',
     'FilterbyCategory' => 'البحث باستخدام الفئات',
-    'FilterbyPrice' => 'البحث باستخدام السعر',
+    'FilterbyICPN' => 'البحث باستخدام الICPN',
     'FilterbyAuthorName' => 'البحث باستخدام المؤلف',
     'AddtoCart' => 'اضف الى السلة',
     'Description' => 'الوصف',
@@ -77,4 +77,6 @@ return [
     'orderItems'=>'البضائع بالطلب',
     'Partners'=>'وكلائنا',
     'noOrdersYet' => 'لا يوجد طلبات',
+    'Tax' => 'الضريبة',
+    'Delivery' => 'سعر التوصيل',
 ];

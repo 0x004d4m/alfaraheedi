@@ -7,6 +7,9 @@
 @if(backpack_user()->can('View Authours'))
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('authour') }}"><i class="nav-icon la la-question"></i> Authours</a></li>
 @endif
+@if(backpack_user()->can('View Publishers'))
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('publisher') }}"><i class="nav-icon la la-question"></i> Publishers</a></li>
+@endif
 @if(backpack_user()->can('View Products'))
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('product') }}"><i class="nav-icon la la-question"></i> Products</a></li>
 @endif
@@ -27,6 +30,12 @@
 @endif
 @if(backpack_user()->can('View Socials'))
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('social') }}"><i class="nav-icon la la-question"></i> Socials</a></li>
+@endif
+@if(backpack_user()->can('Manage Settings'))
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('setting') }}"><i class="nav-icon la la-question"></i> Settings</a></li>
+@endif
+@if(backpack_user()->can('Manage Discounts'))
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('discount') }}"><i class="nav-icon la la-question"></i> Discounts</a></li>
 @endif
 @if(backpack_user()->can('Manage Authentication'))
     <!-- Users, Roles, Permissions -->

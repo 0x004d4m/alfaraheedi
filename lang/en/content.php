@@ -30,7 +30,7 @@ return [
     'Enteryourname' => 'Enter your name',
     'FilterbyAuthorName' => 'Filter by Author Name',
     'FilterbyCategory' => 'Filter by Category',
-    'FilterbyPrice' => 'Filter by Price',
+    'FilterbyICPN' => 'Filter by ICPN',
     'Firstname' => 'First name',
     'ForgotPassword' => 'Forgot Password?',
     'GetinTouch' => 'Get in Touch',
@@ -77,4 +77,6 @@ return [
     'dir2' => 'left',
     'dir' => 'ltr',
     'noOrdersYet' => 'No Orders Yet',
+    'Tax' => 'Tax',
+    'Delivery' => 'Delivery Price',
 ];

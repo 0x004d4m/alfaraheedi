@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-wrappper section-bg">
-        <div class="footer-area footer-padding">
+        <div class="footer-area pt-4">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-xl-3 col-lg-5 col-md-4 col-sm-6">
@@ -21,7 +21,7 @@
                             <div class="footer-tittle">
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>{{ __('content.footer') }}</p>
+                                        <h4 style="font-weight: 400;">{{__('content.footer')}}</h4>
                                     </div>
                                 </div>
                             </div>

@@ -39,6 +39,11 @@ class OrderItemCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
+            'name' => 'tax',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
             'label' => "Product",
             'type' => "select",
             'name' => 'product_id',

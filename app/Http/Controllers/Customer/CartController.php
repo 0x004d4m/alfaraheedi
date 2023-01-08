@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -13,12 +14,14 @@ class CartController extends Controller
 {
     public function index(Request $request){
         $Customer = Customer::where('id',$request->customer_id)->first();
+        $Setting = Setting::first();
         $OrderItems = OrderItem::with([
-            'product:id,price,image1,name_'.Session::get('locale').' as name'
+            'product:id,price,tax,image1,name_'.Session::get('locale').' as name'
         ])->where('customer_id',$request->customer_id)->whereNull('order_id')->get();
         return view('customer.cart', [
             "OrderItems" => $OrderItems,
             "Address" => $Customer->address,
+            "Setting" => $Setting,
         ]);
     }
 
@@ -33,6 +36,7 @@ class CartController extends Controller
                 'customer_id'=>$request->customer_id,
                 'quantity'=>$request->quantity,
                 'price'=>$Product->price,
+                'tax'=>$Product->tax,
             ]);
             Session::flash('Success',__('content.addedSuccessfully'));
         }

@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class OrderItem extends Model
+class Discount extends Model
 {
-    use CrudTrait, HasFactory, SoftDeletes;
+    use CrudTrait;
 
     /*
     |--------------------------------------------------------------------------
@@ -17,18 +15,11 @@ class OrderItem extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'order_items';
+    protected $table = 'discounts';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = [
-        'product_id',
-        'customer_id',
-        'quantity',
-        'price',
-        'tax',
-        'order_id',
-    ];
+    // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -43,21 +34,6 @@ class OrderItem extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
-
-    public function customer()
-    {
-        return $this->belongsTo(Customer::class);
-    }
-
-    public function order()
-    {
-        return $this->belongsTo(Order::class);
-    }
 
     /*
     |--------------------------------------------------------------------------

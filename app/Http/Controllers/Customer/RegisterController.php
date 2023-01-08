@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\CustomerToken;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +27,7 @@ class RegisterController extends Controller
             'email'=>'required|email|unique:customers,email',
             'address'=>'required',
             'image'=>'nullable',
-            'phone'=>['required','unique:customers,phone','regex:/^(05)\d{8}/i'],
+            'phone'=>['required','unique:customers,phone'],
             'password'=>['required','confirmed','regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/i']
         ]);
 
@@ -55,7 +54,7 @@ class RegisterController extends Controller
             'phone'=> $request->phone,
             'address'=> $request->address,
             'image'=> $image,
-            'password'=> Hash::make($request->password)
+            'password'=> $request->password
         ]);
 
         $CustomerToken = CustomerToken::create([

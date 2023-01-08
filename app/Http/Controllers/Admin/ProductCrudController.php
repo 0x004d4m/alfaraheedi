@@ -32,6 +32,12 @@ class ProductCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->addColumn([
+            'name' => 'icpn',
+            'type' => 'text',
+            'label' => 'ICPN',
+        ]);
+
+        $this->crud->addColumn([
             'name' => 'name_ar',
             'type' => 'text',
             'label' => 'Name AR',
@@ -56,6 +62,13 @@ class ProductCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
+            'name' => 'tax',
+            'type' => 'text',
+            'label' => 'Tax',
+            'suffix' => '%',
+        ]);
+
+        $this->crud->addColumn([
             'name' => 'stock',
             'type' => 'text',
             'label' => 'Stock',
@@ -66,7 +79,7 @@ class ProductCrudController extends CrudController
             'type' => "select",
             'name' => 'category_id',
             'entity' => 'category',
-            'attribute' => "category",
+            'attribute' => "name_".app()->getLocale(),
             'model' => 'App\Models\Category'
         ]);
 
@@ -75,14 +88,29 @@ class ProductCrudController extends CrudController
             'type' => "select",
             'name' => 'authour_id',
             'entity' => 'authour',
-            'attribute' => "authour",
+            'attribute' => "name_".app()->getLocale(),
             'model' => 'App\Models\Authour'
+        ]);
+
+        $this->crud->addColumn([
+            'label' => "Publisher",
+            'type' => "select",
+            'name' => 'publisher_id',
+            'entity' => 'publisher',
+            'attribute' => "name_".app()->getLocale(),
+            'model' => 'App\Models\Publisher'
         ]);
     }
 
     protected function setupCreateOperation()
     {
         $this->crud->setValidation(ProductRequest::class);
+
+        $this->crud->addField([
+            'name' => 'icpn',
+            'type' => 'text',
+            'label' => 'ICPN',
+        ]);
 
         $this->crud->addField([
             'name' => 'name_ar',
@@ -103,6 +131,13 @@ class ProductCrudController extends CrudController
         ]);
 
         $this->crud->addField([
+            'name' => 'tax',
+            'type' => 'number',
+            'label' => 'Tax',
+            'suffix' => '%',
+        ]);
+
+        $this->crud->addField([
             'name' => 'stock',
             'type' => 'number',
             'label' => 'Stock',
@@ -113,7 +148,7 @@ class ProductCrudController extends CrudController
             'type' => "relationship",
             'name' => 'category_id',
             'entity' => 'category',
-            'attribute' => "name_en",
+            'attribute' => "name_".app()->getLocale(),
             'model' => 'App\Models\Category'
         ]);
 
@@ -122,8 +157,18 @@ class ProductCrudController extends CrudController
             'type' => "relationship",
             'name' => 'authour_id',
             'entity' => 'authour',
-            'attribute' => "name_en",
+            'attribute' => "name_".app()->getLocale(),
             'model' => 'App\Models\Authour',
+            "allows_null" => true,
+        ]);
+
+        $this->crud->addField([
+            'label' => "Publisher",
+            'type' => "relationship",
+            'name' => 'publisher_id',
+            'entity' => 'publisher',
+            'attribute' => "name_".app()->getLocale(),
+            'model' => 'App\Models\Publisher',
             "allows_null" => true,
         ]);
 
@@ -166,6 +211,12 @@ class ProductCrudController extends CrudController
     protected function setupShowOperation()
     {
         $this->crud->addColumn([
+            'name' => 'icpn',
+            'type' => 'text',
+            'label' => 'ICPN',
+        ]);
+
+        $this->crud->addColumn([
             'name' => 'name_ar',
             'type' => 'text',
             'label' => 'Name AR',
@@ -202,6 +253,13 @@ class ProductCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
+            'name' => 'tax',
+            'type' => 'text',
+            'label' => 'Tax',
+            'suffix' => '%',
+        ]);
+
+        $this->crud->addColumn([
             'name' => 'stock',
             'type' => 'text',
             'label' => 'Stock',
@@ -212,7 +270,7 @@ class ProductCrudController extends CrudController
             'type' => "select",
             'name' => 'category_id',
             'entity' => 'category',
-            'attribute' => "category",
+            'attribute' => "name_".app()->getLocale(),
             'model' => 'App\Models\Category'
         ]);
 
@@ -221,8 +279,17 @@ class ProductCrudController extends CrudController
             'type' => "select",
             'name' => 'authour_id',
             'entity' => 'authour',
-            'attribute' => "authour",
+            'attribute' => "name_".app()->getLocale(),
             'model' => 'App\Models\Authour'
+        ]);
+
+        $this->crud->addColumn([
+            'label' => "Publisher",
+            'type' => "select",
+            'name' => 'publisher_id',
+            'entity' => 'publisher',
+            'attribute' => "name_".app()->getLocale(),
+            'model' => 'App\Models\Publisher'
         ]);
 
         $this->crud->addColumn([
