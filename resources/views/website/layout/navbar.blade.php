@@ -45,7 +45,7 @@
                         <div class="col-xl-12">
                             <!-- logo 2 -->
                             <div class="logo2">
-                                <a href="#"><img src="{{ url('template/assets/img/logo/logo.png') }}"
+                                <a href="#"><img src="{{ url('template/assets/img/logo/logo_PNG2.png') }}"
                                         alt=""></a>
                             </div>
                             <!-- Main-menu -->
