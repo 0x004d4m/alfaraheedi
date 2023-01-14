@@ -96,7 +96,7 @@ class Order extends Model
                     'title' => 'Test Email From AllPHPTricks.com',
                     'body' => 'This is the body of test email.'
                 ];
-                FacadesMail::to('adam31999@gmail.com')->send(new SendMail($testMailData));
+                FacadesMail::from('no-reply@smartcore-ksa.com')->to('adam31999@gmail.com')->send(new SendMail($testMailData));
             }
             if($Order->order_status_id == 3){
 
