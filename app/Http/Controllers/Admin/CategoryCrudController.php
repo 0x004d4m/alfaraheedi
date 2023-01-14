@@ -11,7 +11,6 @@ class CategoryCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     public function setup()
     {
@@ -54,6 +53,18 @@ class CategoryCrudController extends CrudController
             'type' => 'text',
             'label' => 'Type',
         ]);
+
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'type' => 'text',
+            'label' => 'Created At',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'updated_at',
+            'type' => 'text',
+            'label' => 'Updated At',
+        ]);
     }
 
     protected function setupCreateOperation()
@@ -91,44 +102,5 @@ class CategoryCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-    }
-
-    protected function setupShowOperation()
-    {
-        $this->crud->addColumn([
-            'name' => 'name_ar',
-            'type' => 'text',
-            'label' => 'Name AR',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'name_en',
-            'type' => 'text',
-            'label' => 'Name EN',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'image',
-            'type' => 'image',
-            'label' => 'Image',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'type',
-            'type' => 'text',
-            'label' => 'Type',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'created_at',
-            'type' => 'text',
-            'label' => 'Created At',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'updated_at',
-            'type' => 'text',
-            'label' => 'Updated At',
-        ]);
     }
 }

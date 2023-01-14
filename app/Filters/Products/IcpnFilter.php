@@ -2,10 +2,10 @@
 
 namespace App\Filters\Products;
 
-class IcpnFilter
+class IsbnFilter
 {
     public function filter($builder, $value)
     {
-        return $builder->where('icpn', 'LIKE', "%$value%");
+        return $builder->where('isbn', 'LIKE', "%$value%");
     }
 }

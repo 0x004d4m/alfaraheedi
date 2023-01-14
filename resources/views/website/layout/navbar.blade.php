@@ -9,7 +9,7 @@
                                 <div class="header-info-left d-flex align-items-center">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="#"><img src="{{ url('template/assets/img/logo/logo.png') }}"
+                                        <a href="#"><img src="{{ url('template/assets/img/logo/logo_PNG2.png') }}"
                                                 alt=""></a>
                                     </div>
                                     <a> </a>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="header-bottom  header-sticky" style="background-color: #EAF6F6">
+            <div class="header-bottom  header-sticky" style="background-color: #EDEDED">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-12">

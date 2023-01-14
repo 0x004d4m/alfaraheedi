@@ -15,11 +15,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('isbn')->default('0');
             $table->string('name_ar');
             $table->string('name_en');
             $table->text('description_ar');
             $table->text('description_en');
             $table->double('price');
+            $table->double('tax')->default(0);
             $table->text('image1');
             $table->text('image2')->nullable();
             $table->text('image3')->nullable();
@@ -28,6 +30,8 @@ class CreateProductsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('authour_id')->nullable();
             $table->foreign('authour_id')->references('id')->on('authours');
+            $table->unsignedBigInteger('publisher_id')->nullable();
+            $table->foreign('publisher_id')->references('id')->on('publishers');
             $table->timestamps();
             $table->softDeletes();
         });

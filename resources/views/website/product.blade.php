@@ -19,7 +19,7 @@
                 <div class="row" dir="{{__('content.dir')}}">
                     <div class="col-xl-12">
                         <!-- Single -->
-                        <div class="single-services d-flex align-items-center mb-0" style="background-color: #EAF6F6;">
+                        <div class="single-services d-flex align-items-center mb-0" style="background-color: #EDEDED;">
                             <div class="features-img" style="width: 20%;" >
                                 <img style="width: 100%;" src="{{url($Product->image1)}}" alt="{{$Product->name}}">
                             </div>
@@ -51,7 +51,7 @@
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{$Product->id}}">
                                     <button type="submit" name="addToCart" class="btn btn-white text-dark mr-10 mb-2 mx-2 d-flex justify-content-between" style="background-color: white; color: black!important;">{{__('content.AddtoCart')}}</button>
-                                    <input type="number" name="quantity" class="form-control mb-2" placeholder="{{__('content.Quantity')}}" min="1" max="{{$Product->stock}}" required style="width: 30%!important;">
+                                    <input type="number" name="quantity" class="form-control mb-2" placeholder="{{__('content.Quantity')}}" min="1" max="{{$Product->stock}}" required style="width: 30%!important;" value="1">
                                 </form>
                                 {{-- <a href="#" class="border-btn share-btn"><i class="fas fa-share-alt"></i></a> --}}
                             </div>

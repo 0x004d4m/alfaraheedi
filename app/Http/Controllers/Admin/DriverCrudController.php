@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\DriverRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 class DriverCrudController extends CrudController
 {
@@ -12,7 +11,6 @@ class DriverCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     public function setup()
     {
@@ -101,38 +99,5 @@ class DriverCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-    }
-
-    protected function setupShowOperation()
-    {
-        $this->crud->addColumn([
-            'name' => 'first_name',
-            'type' => 'text',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'last_name',
-            'type' => 'text',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'phone',
-            'type' => 'text',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'car_model',
-            'type' => 'text',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'car_plate',
-            'type' => 'text',
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'car_color',
-            'type' => 'text',
-        ]);
     }
 }

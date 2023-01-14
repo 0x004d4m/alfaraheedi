@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\Discount;
 use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
@@ -46,5 +48,39 @@ class CartController extends Controller
     public function destroy(Request $request, $id){
         OrderItem::where('id', $id)->delete();
         return redirect('/cart');
+    }
+
+    public function checkDiscount(Request $request){
+        if($request->discount=='' || $request->discount==null){
+            Session::flash('error',__('content.DiscountCodeIsNull'));
+            return redirect('/cart#discount');
+        }
+        Session::put('discount',$request->discount);
+        Session::put('name',$request->name);
+        Session::put('card_number',$request->card_number);
+        $Discount = Discount::where('code',$request->discount)->where('active',1)->count();
+        if($Discount==0){
+            Session::flash('error',__('content.DiscountCodeIsNotCorrect'));
+            return redirect('/cart#discount');
+        }else{
+            $OrderItems = OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get();
+            foreach($OrderItems as $OrderItem){
+                $Discount = Discount::where('category_id',$OrderItem->product->category_id)->where('code',$request->discount)->where('active',1)->first();
+                if(($Discount)){
+                    $OrderItem->update([
+                        'code'=>$Discount->code,
+                        'discount_value'=>$Discount->discount_value,
+                        'category_id'=>$Discount->category_id,
+                    ]);
+                }else{
+                    $OrderItem->update([
+                        'code'=>null,
+                        'discount_value'=>null,
+                        'category_id'=>null,
+                    ]);
+                }
+            }
+        }
+        return redirect('/cart#discount');
     }
 }

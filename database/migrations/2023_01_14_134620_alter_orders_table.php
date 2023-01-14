@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function($table){
-            $table->double('delivery_price');
-            $table->double('total');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->string('discount')->nullable();
         });
     }
 

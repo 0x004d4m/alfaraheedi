@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Setting extends Model
 {
-    use CrudTrait;
+    use CrudTrait, SoftDeletes, HasFactory;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ class Setting extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['delivery_price'];
     // protected $hidden = [];
     // protected $dates = [];
 

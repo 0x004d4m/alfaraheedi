@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->double('tax')->default(0);
-            $table->string('icpn')->default('0');
-            $table->unsignedBigInteger('publisher_id')->nullable();
-            $table->foreign('publisher_id')->references('id')->on('publishers');
+        Schema::table('order_items', function (Blueprint $table) {
+            $table->string('code')->nullable();
+            $table->double('discount_value')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

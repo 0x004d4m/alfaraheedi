@@ -46,6 +46,7 @@ Route::group([
     'middleware'=>'CustomerAuth'
 ],function () {
     Route::resource('/cart', CartController::class);
+    Route::post('/checkCode', [CartController::class,'checkDiscount']);
     Route::resource('/order', OrderController::class);
     Route::get('/logout', [LogoutController::class,'submit']);
 });

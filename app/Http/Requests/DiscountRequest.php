@@ -25,7 +25,10 @@ class DiscountRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'code' => 'required',
+            'discount_value' => 'required',
+            'active' => 'required',
+            'category_id' => 'required',
         ];
     }
 

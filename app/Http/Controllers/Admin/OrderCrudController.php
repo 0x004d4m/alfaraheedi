@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\OrderRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\Widget;
+use Illuminate\Support\Facades\Log;
 
 class OrderCrudController extends CrudController
 {
@@ -80,6 +81,21 @@ class OrderCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
+            'name' => 'name',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'card_number',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'discount',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
             'name' => 'created_at',
             'type' => 'text',
         ]);
@@ -132,6 +148,21 @@ class OrderCrudController extends CrudController
 
         $this->crud->addColumn([
             'name' => 'address',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'name',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'card_number',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'discount',
             'type' => 'text',
         ]);
 

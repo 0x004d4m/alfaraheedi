@@ -33,7 +33,7 @@ class Product extends Model
         'description_en',
         'price',
         'tax',
-        'icpn',
+        'isbn',
         'image1',
         'image2',
         'image3',

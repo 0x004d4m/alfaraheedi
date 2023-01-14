@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Publisher extends Model
 {
-    use CrudTrait;
+    use CrudTrait, SoftDeletes, HasFactory;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +21,9 @@ class Publisher extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'name_ar','name_en'
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 

@@ -32,9 +32,9 @@ class ProductCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->addColumn([
-            'name' => 'icpn',
+            'name' => 'isbn',
             'type' => 'text',
-            'label' => 'ICPN',
+            'label' => 'ISBN',
         ]);
 
         $this->crud->addColumn([
@@ -107,9 +107,9 @@ class ProductCrudController extends CrudController
         $this->crud->setValidation(ProductRequest::class);
 
         $this->crud->addField([
-            'name' => 'icpn',
+            'name' => 'isbn',
             'type' => 'text',
-            'label' => 'ICPN',
+            'label' => 'ISBN',
         ]);
 
         $this->crud->addField([
@@ -211,9 +211,9 @@ class ProductCrudController extends CrudController
     protected function setupShowOperation()
     {
         $this->crud->addColumn([
-            'name' => 'icpn',
+            'name' => 'isbn',
             'type' => 'text',
-            'label' => 'ICPN',
+            'label' => 'ISBN',
         ]);
 
         $this->crud->addColumn([

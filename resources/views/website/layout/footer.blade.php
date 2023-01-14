@@ -8,7 +8,7 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo mb-25">
-                                    <a href="#"><img src="{{ url('template/assets/img/logo/logo.png') }}"
+                                    <a href="#"><img src="{{ url('template/assets/img/logo/logo_PNG2.png') }}"
                                             alt=""></a>
                                 </div>
 

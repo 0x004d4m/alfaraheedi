@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Partner extends Model
 {
-    use CrudTrait,SoftDeletes;
+    use CrudTrait, HasFactory,SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ class Partner extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['image'];
     // protected $hidden = [];
     // protected $dates = [];
 

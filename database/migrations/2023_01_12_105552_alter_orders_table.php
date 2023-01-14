@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function($table){
-            $table->unsignedBigInteger('driver_id')->nullable()->change();
+        Schema::table('orders', function (Blueprint $table) {
+            $table->double('code')->nullable();
         });
     }
 

@@ -31,7 +31,7 @@ class ProductRequest extends FormRequest
             'description_en' => 'required|min:1|max:255',
             'price' => 'required|min:1|max:255',
             'tax' => 'required|min:1|max:255',
-            'icpn' => 'required|min:1|max:255',
+            'isbn' => 'required|min:1|max:255',
             'image1' => 'required',
             'image2' => 'nullable',
             'image3' => 'nullable',

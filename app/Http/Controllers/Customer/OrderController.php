@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
@@ -16,7 +15,7 @@ class OrderController extends Controller
     public function index(Request $request){
         $Orders = Order::with([
             'orderStatus:id,name_'.Session::get('locale').' as name',
-        ])->where('customer_id', $request->customer_id)->paginate();
+        ])->where('customer_id', $request->customer_id)->orderBy('id','desc')->paginate();
 
         return view('customer.orders',[
             "Orders"=>$Orders,
@@ -25,26 +24,23 @@ class OrderController extends Controller
     }
 
     public function store(Request $request){
-        $Customer = Customer::where('id', $request->customer_id)->first();
+        $Setting = Setting::first();
 
-        $OrderItems = OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get();
-
-        $Total = $delivery_price = Setting::first()->delivery_price;
-        foreach($OrderItems as $OrderItem){
-            $Total+=($OrderItem->quantity * $OrderItem->price + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100)));
-        }
         $Order = Order::create([
             'order_status_id'=>1,
             'customer_id'=>$request->customer_id,
             'driver_id'=>null,
             'address'=>$request->address,
-            'delivery_price'=>$delivery_price,
-            'total'=>$Total,
+            'name'=>$request->name,
+            'card_number'=>$request->card_number,
+            'code'=>$request->discount,
+            'delivery_price'=>0,
+            'total'=>0,
         ]);
 
-        $OrderItems = OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get();
-
-        foreach($OrderItems as $OrderItem){
+        $sum=0;
+        $discount=0;
+        foreach(OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get() as $OrderItem){
             $OrderItem->update([
                 'order_id'=>$Order->id
             ]);
@@ -53,7 +49,21 @@ class OrderController extends Controller
             $Product->update([
                 'stock'=>($stock<0)?0:$stock
             ]);
+
+            $price = ($OrderItem->quantity * $OrderItem->price + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100)));
+            $price2 = ($OrderItem->quantity * ($OrderItem->price * $OrderItem->discount_value/100));
+            $sum+=$price;
+            $discount+=$price2;
         }
+
+        $Order->update([
+            'discount'=>$discount,
+            'delivery_price'=>$Setting->delivery_price,
+            'total'=>(($sum + $Setting->delivery_price)-$discount),
+        ]);
+        Session::forget('discount');
+        Session::forget('name');
+        Session::forget('card_number');
         return redirect('/order');
     }
 

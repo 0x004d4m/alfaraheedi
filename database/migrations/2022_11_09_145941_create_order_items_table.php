@@ -21,6 +21,7 @@ class CreateOrderItemsTable extends Migration
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->integer('quantity');
             $table->double('price');
+            $table->double('tax')->default(0);
             $table->unsignedBigInteger('order_id')->nullable();
             $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();

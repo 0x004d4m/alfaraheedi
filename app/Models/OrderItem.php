@@ -28,6 +28,10 @@ class OrderItem extends Model
         'price',
         'tax',
         'order_id',
+
+        'code',
+        'discount_value',
+        'category_id'
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -57,6 +61,11 @@ class OrderItem extends Model
     public function order()
     {
         return $this->belongsTo(Order::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     /*

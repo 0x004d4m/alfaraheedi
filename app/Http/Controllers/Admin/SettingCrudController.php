@@ -4,79 +4,45 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\SettingRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
-/**
- * Class SettingCrudController
- * @package App\Http\Controllers\Admin
- * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
- */
 class SettingCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
 
-    /**
-     * Configure the CrudPanel object. Apply settings to all operations.
-     *
-     * @return void
-     */
     public function setup()
     {
         if (!backpack_user()->can('Manage Settings'))
         {
             abort(403, 'Access denied');
         }
-        CRUD::setModel(\App\Models\Setting::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/setting');
-        CRUD::setEntityNameStrings('setting', 'settings');
+        $this->crud->setModel('App\Models\Setting');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/setting');
+        $this->crud->setEntityNameStrings('setting', 'settings');
     }
 
-    /**
-     * Define what happens when the List operation is loaded.
-     *
-     * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
-     * @return void
-     */
     protected function setupListOperation()
     {
-        CRUD::column('delivery_price');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
-        CRUD::column('deleted_at');
-
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
-         */
+        $this->crud->addColumn([
+            'name' => 'delivery_price',
+            'type' => 'text',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'updated_at',
+            'type' => 'text',
+        ]);
     }
 
-    /**
-     * Define what happens when the Create operation is loaded.
-     *
-     * @see https://backpackforlaravel.com/docs/crud-operation-create
-     * @return void
-     */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(SettingRequest::class);
+        $this->crud->setValidation(SettingRequest::class);
 
-        CRUD::field('delivery_price');
-
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
-         */
+        $this->crud->addField([
+            'name' => 'delivery_price',
+            'type' => 'text',
+        ]);
     }
 
-    /**
-     * Define what happens when the Update operation is loaded.
-     *
-     * @see https://backpackforlaravel.com/docs/crud-operation-update
-     * @return void
-     */
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();

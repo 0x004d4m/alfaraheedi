@@ -28,6 +28,10 @@ class Order extends Model
         'address',
         'delivery_price',
         'total',
+        'code',
+        'discount',
+        'name',
+        'card_number',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -81,4 +85,22 @@ class Order extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+
+    protected static function booted()
+    {
+        static::updated(function ($Order) {
+            if($Order->order_status_id == 2){
+
+            }
+            if($Order->order_status_id == 3){
+
+            }
+            if($Order->order_status_id == 4){
+
+            }
+            if($Order->order_status_id == 6){
+
+            }
+        });
+    }
 }

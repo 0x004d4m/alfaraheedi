@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('order_items', function (Blueprint $table) {
-            $table->double('tax')->default(0);
+        Schema::table('products', function (Blueprint $table) {
+            $table->renameColumn('icpn','isbn');
         });
     }
 

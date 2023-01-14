@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('customer_tokens', function($table){
-            $table->string('token')->nullable()->change();
+        Schema::table('orders', function (Blueprint $table) {
+            $table->string('name')->nullable();
+            $table->string('card_number')->nullable();
         });
     }
 

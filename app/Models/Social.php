@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Social extends Model
 {
-    use CrudTrait;
+    use CrudTrait, HasFactory, SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +21,10 @@ class Social extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'icon',
+        'link'
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 

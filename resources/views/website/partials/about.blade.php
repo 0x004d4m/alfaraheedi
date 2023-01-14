@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-12">
                 <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img class="img-fluid" src="{{url('template/assets/img/video.jpg')}}">
+                    <img class="img-fluid" src="{{url('template/assets/img/video2.jpg')}}">
                 </a>
             </div>
         </div>

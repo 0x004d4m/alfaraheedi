@@ -39,13 +39,13 @@
                             <!-- Range Slider Start -->
                             <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
                                 <div class="small-tittle">
-                                    <h4>{{__('content.FilterbyICPN')}}</h4>
+                                    <h4>{{__('content.FilterbyISBN')}}</h4>
                                 </div>
                                 <div class="widgets_inner">
-                                    @if (Request::has('icpn'))
-                                        <input type="text" class="form-control" name="icpn" value="{{Request::get('icpn')}}"/>
+                                    @if (Request::has('isbn'))
+                                        <input type="text" class="form-control" name="isbn" value="{{Request::get('isbn')}}"/>
                                     @else
-                                        <input type="text" class="form-control" name="icpn"/>
+                                        <input type="text" class="form-control" name="isbn"/>
                                     @endif
                                 </div>
                             </aside>

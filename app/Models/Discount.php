@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Discount extends Model
 {
-    use CrudTrait;
+    use CrudTrait, HasFactory, SoftDeletes;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +21,12 @@ class Discount extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'code',
+        'discount_value',
+        'active',
+        'category_id'
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,6 +41,10 @@ class Discount extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     /*
     |--------------------------------------------------------------------------

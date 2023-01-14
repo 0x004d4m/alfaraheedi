@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('customers', function($table){
-            $table->text('image')->default('/template/assets/img/default.png')->nullable(false)->change();
+        Schema::table('discounts', function (Blueprint $table) {
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
