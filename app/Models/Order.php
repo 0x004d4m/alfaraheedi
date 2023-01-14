@@ -98,7 +98,7 @@ class Order extends Model
                     'body' => 'This is the body of test email.'
                 ];
                 $FacadesMail = FacadesMail::to('adam31999@gmail.com')->send(new SendMail($testMailData));
-                Log::debug($FacadesMail);
+                Log::debug(json_encode($FacadesMail));
             }
             if($Order->order_status_id == 3){
 
