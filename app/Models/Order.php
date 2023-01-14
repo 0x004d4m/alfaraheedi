@@ -6,6 +6,8 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail as FacadesMail;
 
 class Order extends Model
 {
@@ -90,7 +92,11 @@ class Order extends Model
     {
         static::updated(function ($Order) {
             if($Order->order_status_id == 2){
-
+                $testMailData = [
+                    'title' => 'Test Email From AllPHPTricks.com',
+                    'body' => 'This is the body of test email.'
+                ];
+                FacadesMail::to('adam31999@gmail.com')->send(new SendMail($testMailData));
             }
             if($Order->order_status_id == 3){
 
