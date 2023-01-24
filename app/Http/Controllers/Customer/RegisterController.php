@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendMail;
 use App\Models\Customer;
+use App\Models\CustomerEmailVerification;
 use App\Models\CustomerToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -64,6 +67,19 @@ class RegisterController extends Controller
         $CustomerToken->update([
             'token'=> md5($CustomerToken->createToken('CustomerAuth')->plainTextToken),
         ]);
+
+        $CustomerEmailVerification = CustomerEmailVerification::create([
+            'customer_id'=>$Customer->id
+        ]);
+
+        $CustomerEmailVerification->update([
+            'token'=> md5($CustomerToken->createToken('CustomerEmailVerification')->plainTextToken),
+        ]);
+
+        $mailData = [
+            'customer_id' => $Customer->id,
+        ];
+        $FacadesMail = Mail::to($Customer->email)->send(new SendMail($mailData, 'emails.register', 'Email Confirmation - Smartcore-KSA'));
 
         Session::put('CustomerToken', $CustomerToken->token);
         return redirect('/store');

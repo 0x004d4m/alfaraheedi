@@ -24,6 +24,10 @@ class CreateOrderItemsTable extends Migration
             $table->double('tax')->default(0);
             $table->unsignedBigInteger('order_id')->nullable();
             $table->foreign('order_id')->references('id')->on('orders');
+            $table->string('code')->nullable();
+            $table->double('discount_value')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Mail\SendMail;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail as FacadesMail;
+use Illuminate\Support\Facades\Mail;
 
 class Order extends Model
 {
@@ -92,22 +91,20 @@ class Order extends Model
     protected static function booted()
     {
         static::updated(function ($Order) {
+            $mailData = [
+                'order_id' => $Order->id,
+            ];
             if($Order->order_status_id == 2){
-                $testMailData = [
-                    'title' => 'Test Email From AllPHPTricks.com',
-                    'body' => 'This is the body of test email.'
-                ];
-                $FacadesMail = FacadesMail::to('adam31999@gmail.com')->send(new SendMail($testMailData));
-                Log::debug(json_encode($FacadesMail));
+                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.in_progress', 'Smartcore-KSA - Order Status'));
             }
             if($Order->order_status_id == 3){
-
+                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.shipping', 'Smartcore-KSA - Order Status'));
             }
             if($Order->order_status_id == 4){
-
+                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.delivered', 'Smartcore-KSA - Order Status'));
             }
             if($Order->order_status_id == 6){
-
+                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.rejected', 'Smartcore-KSA - Order Status'));
             }
         });
     }

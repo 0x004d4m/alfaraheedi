@@ -24,6 +24,10 @@ class CreateOrdersTable extends Migration
             $table->text('address');
             $table->double('delivery_price');
             $table->double('total');
+            $table->double('code')->nullable();
+            $table->string('name')->nullable();
+            $table->string('card_number')->nullable();
+            $table->string('discount')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
