@@ -852,7 +852,7 @@
                                                             <tr>
                                                                 <td align="center" class="es-p20b"
                                                                     style="font-size: 0px"><amp-img
-                                                                        src="https://ymehcp.stripocdn.email/content/guids/CABINET_36fc99f737b4d1d474cb7a1e4ea9a9c086253c6a6dc1b29c7a986620bcd342ff/images/shʿar_mrbʿ_outline01.png"
+                                                                        src="{{url('template/assets/img/email/logo.png')}}"
                                                                         alt="Logo"
                                                                         style="display: block;font-size: 12px"
                                                                         width="260" title="Logo"></amp-img></td>
@@ -882,7 +882,7 @@
                                                             <tr>
                                                                 <td align="center" class="es-p10t es-p10b"
                                                                     style="font-size: 0px"><amp-img
-                                                                        src="https://ymehcp.stripocdn.email/content/guids/CABINET_67e080d830d87c17802bd9b4fe1c0912/images/55191618237638326.png"
+                                                                        src="{{url('template/assets/img/email/logo.png')}}"
                                                                         alt style="display: block" width="100"
                                                                         height="72"></amp-img></td>
                                                             </tr>

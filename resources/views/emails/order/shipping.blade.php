@@ -826,12 +826,11 @@
                                                         <table cellpadding="0" cellspacing="0" width="100%"
                                                             role="presentation">
                                                             <tr>
-                                                                <td align="center" style="font-size: 0px">
-                                                                    <amp-img class="adapt-img"
-                                                                        src="https://ymehcp.stripocdn.email/content/guids/CABINET_43a7c681cfd16feae5ed297ccd0ce77429d8c5c21858c6183db9c4a01386a966/images/shʿar_mrbʿ_outline01.png"
+                                                                <td align="center" style="font-size: 0px"><amp-img
+                                                                        class="adapt-img"
+                                                                        src="{{url('template/assets/img/email/logo.png')}}"
                                                                         alt style="display: block" width="335"
-                                                                        layout="responsive"></amp-img>
-                                                                </td>
+                                                                        layout="responsive"></amp-img></td>
                                                             </tr>
                                                         </table>
                                                     </td>
@@ -857,12 +856,10 @@
                                                             role="presentation">
                                                             <tr>
                                                                 <td align="center" class="es-p10t es-p10b"
-                                                                    style="font-size: 0px">
-                                                                    <amp-img
-                                                                        src="https://ymehcp.stripocdn.email/content/guids/CABINET_54100624d621728c49155116bef5e07d/images/84141618400759579.png"
+                                                                    style="font-size: 0px"><amp-img
+                                                                        src="{{url('template/assets/img/email/1.png')}}"
                                                                         alt style="display: block" width="100"
-                                                                        height="98"></amp-img>
-                                                                </td>
+                                                                        height="98"></amp-img></td>
                                                             </tr>
                                                             <tr>
                                                                 <td align="center" class="es-p10b es-m-txt-c">
@@ -894,8 +891,7 @@
                                                             role="presentation">
                                                             <tr>
                                                                 <td align="center" class="es-m-txt-c">
-                                                                    <h2>Order&nbsp;<a target="_blank">#65000500</a>
-                                                                    </h2>
+                                                                    <h2>Order&nbsp;<a target="_blank">#65000500</a></h2>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -919,8 +915,7 @@
                                                                         style="border-radius: 6px;border-color: #5c68e2;border-width: 2px;background: #5c68e2"><a
                                                                             href class="es-button" target="_blank"
                                                                             style="border-left-width: 30px;border-right-width: 30px;border-radius: 6px">TRACK
-                                                                            ORDER STATUS</a></span>
-                                                                    <!--<![endif]-->
+                                                                            ORDER STATUS</a></span> <!--<![endif]-->
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -931,16 +926,14 @@
                                     </tr>
                                     <tr>
                                         <td class="es-p10t es-p10b es-p20r es-p20l esdev-adapt-off" align="left">
-                                            <table width="560" cellpadding="0" cellspacing="0"
-                                                class="esdev-mso-table">
+                                            <table width="560" cellpadding="0" cellspacing="0" class="esdev-mso-table">
                                                 <tr>
                                                     <td class="esdev-mso-td" valign="top">
                                                         <table cellpadding="0" cellspacing="0" class="es-left"
                                                             align="left">
                                                             <tr>
                                                                 <td width="70" class="es-m-p0r" align="center">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%">
                                                                         <tr>
                                                                             <td align="center" style="display: none">
                                                                             </td>
@@ -956,8 +949,8 @@
                                                             align="left">
                                                             <tr>
                                                                 <td width="265" align="center">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        role="presentation">
                                                                         <tr>
                                                                             <td align="left">
                                                                                 <p><strong>Polo</strong></p>
@@ -974,8 +967,8 @@
                                                             align="left">
                                                             <tr>
                                                                 <td width="80" align="left">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        role="presentation">
                                                                         <tr>
                                                                             <td align="center">
                                                                                 <p>2 pcs</p>
@@ -992,8 +985,8 @@
                                                             align="right">
                                                             <tr>
                                                                 <td width="85" align="left">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        role="presentation">
                                                                         <tr>
                                                                             <td align="right">
                                                                                 <p>$20</p>
@@ -1010,16 +1003,14 @@
                                     </tr>
                                     <tr>
                                         <td class="es-p10t es-p10b es-p20r es-p20l esdev-adapt-off" align="left">
-                                            <table width="560" cellpadding="0" cellspacing="0"
-                                                class="esdev-mso-table">
+                                            <table width="560" cellpadding="0" cellspacing="0" class="esdev-mso-table">
                                                 <tr>
                                                     <td class="esdev-mso-td" valign="top">
                                                         <table cellpadding="0" cellspacing="0" class="es-left"
                                                             align="left">
                                                             <tr>
                                                                 <td width="70" class="es-m-p0r" align="center">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%">
                                                                         <tr>
                                                                             <td align="center" style="display: none">
                                                                             </td>
@@ -1035,8 +1026,8 @@
                                                             align="left">
                                                             <tr>
                                                                 <td width="265" align="center">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        role="presentation">
                                                                         <tr>
                                                                             <td align="left">
                                                                                 <p><strong>T-shirt</strong></p>
@@ -1053,8 +1044,8 @@
                                                             align="left">
                                                             <tr>
                                                                 <td width="80" align="left">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        role="presentation">
                                                                         <tr>
                                                                             <td align="center">
                                                                                 <p>1 pcs</p>
@@ -1071,8 +1062,8 @@
                                                             align="right">
                                                             <tr>
                                                                 <td width="85" align="left">
-                                                                    <table cellpadding="0" cellspacing="0"
-                                                                        width="100%" role="presentation">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        role="presentation">
                                                                         <tr>
                                                                             <td align="right">
                                                                                 <p>$20</p>
@@ -1118,8 +1109,7 @@
                                                             <tr>
                                                                 <td align="left">
                                                                     <p>Customer:
-                                                                        <strong>sarah_powell@domain.com</strong>
-                                                                    </p>
+                                                                        <strong>sarah_powell@domain.com</strong></p>
                                                                     <p>Order number:&nbsp;<strong>#65000500</strong></p>
                                                                     <p>Invoice date:&nbsp;<strong>Apr 17, 2021</strong>
                                                                     </p>
@@ -1130,8 +1120,7 @@
                                                         </table>
                                                     </td>
                                                 </tr>
-                                            </table>
-                                            <!--[if mso]></td><td width="0"></td>
+                                            </table> <!--[if mso]></td><td width="0"></td>
 <td width="280" valign="top"><![endif]-->
                                             <table cellpadding="0" cellspacing="0" class="es-right" align="right">
                                                 <tr>
@@ -1150,8 +1139,7 @@
                                                         </table>
                                                     </td>
                                                 </tr>
-                                            </table>
-                                            <!--[if mso]></td></tr></table><![endif]-->
+                                            </table> <!--[if mso]></td></tr></table><![endif]-->
                                         </td>
                                     </tr>
                                     <tr>
@@ -1170,8 +1158,7 @@
                                                                             href="mailto:">stylecasual</a><a
                                                                             target="_blank"
                                                                             href="mailto:">.com</a>&nbsp;or give us a
-                                                                        call at&nbsp;<a target="_blank"
-                                                                            href="tel:">+000
+                                                                        call at&nbsp;<a target="_blank" href="tel:">+000
                                                                             123 456</a>.</p>
                                                                 </td>
                                                             </tr>
@@ -1188,8 +1175,8 @@
                     <table cellpadding="0" cellspacing="0" class="es-footer" align="center">
                         <tr>
                             <td align="center">
-                                <table class="es-footer-body" align="center" cellpadding="0" cellspacing="0"
-                                    width="640" style="background-color: transparent">
+                                <table class="es-footer-body" align="center" cellpadding="0" cellspacing="0" width="640"
+                                    style="background-color: transparent">
                                     <tr>
                                         <td class="es-p20t es-p20b es-p20r es-p20l" align="left">
                                             <table cellpadding="0" cellspacing="0" width="100%">

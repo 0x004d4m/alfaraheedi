@@ -828,7 +828,7 @@
                                                             <tr>
                                                                 <td align="center" style="font-size: 0px"><amp-img
                                                                         class="adapt-img"
-                                                                        src="https://ymehcp.stripocdn.email/content/guids/CABINET_43a7c681cfd16feae5ed297ccd0ce77429d8c5c21858c6183db9c4a01386a966/images/shʿar_mrbʿ_outline01.png"
+                                                                        src="{{url('template/assets/img/email/logo.png')}}"
                                                                         alt style="display: block" width="335"
                                                                         layout="responsive"></amp-img></td>
                                                             </tr>
@@ -857,7 +857,7 @@
                                                             <tr>
                                                                 <td align="center" class="es-p10t es-p10b"
                                                                     style="font-size: 0px"><amp-img
-                                                                        src="https://ymehcp.stripocdn.email/content/guids/CABINET_54100624d621728c49155116bef5e07d/images/84141618400759579.png"
+                                                                        src="{{url('template/assets/img/email/1.png')}}"
                                                                         alt style="display: block" width="100"
                                                                         height="98"></amp-img></td>
                                                             </tr>
