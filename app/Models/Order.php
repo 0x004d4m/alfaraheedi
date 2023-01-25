@@ -92,19 +92,16 @@ class Order extends Model
     {
         static::updated(function ($Order) {
             $mailData = [
-                'order_id' => $Order->id,
+                'Customer'=>$Order->customer->email,
+                'Order_number'=>$Order->id,
+                'Invoice_date'=>date('d-m-Y', strtotime($Order->created_at)),
+                'Payment_method'=>'Cash',
+                'Currency'=>'SR',
+                'Shipping_address'=>$Order->address . ($Order->name==''?'':'<p> Customer Name: '.$Order->name.'</p>') . ($Order->card_number==''?'':'<p>Customer Card Number: '.$Order->card_number.'</p>'),
+                'Order'=>$Order,
             ];
-            if($Order->order_status_id == 2){
-                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.in_progress', 'Smartcore-KSA - Order Status'));
-            }
-            if($Order->order_status_id == 3){
-                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.shipping', 'Smartcore-KSA - Order Status'));
-            }
-            if($Order->order_status_id == 4){
-                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.delivered', 'Smartcore-KSA - Order Status'));
-            }
-            if($Order->order_status_id == 6){
-                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order.rejected', 'Smartcore-KSA - Order Status'));
+            if($Order->order_status_id == 6 || $Order->order_status_id == 4 || $Order->order_status_id == 3 || $Order->order_status_id == 2){
+                $FacadesMail = Mail::to($Order->customer->email)->send(new SendMail($mailData, 'emails.order', env('APP_NAME').' - Track your order'));
             }
         });
     }

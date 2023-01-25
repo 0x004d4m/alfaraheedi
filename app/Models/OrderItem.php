@@ -28,7 +28,6 @@ class OrderItem extends Model
         'price',
         'tax',
         'order_id',
-
         'code',
         'discount_value',
         'category_id'

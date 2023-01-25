@@ -89,9 +89,10 @@ class RegisterController extends Controller
 
         $mailData = [
             'customer_id' => $Customer->id,
-            'customer_id' => $CustomerEmailVerification->token,
+            'customer_name' => $Customer->first_name.' '.$Customer->last_name,
+            'token' => $CustomerEmailVerification->token,
         ];
-        $FacadesMail = Mail::to($Customer->email)->send(new SendMail($mailData, 'emails.register', 'Email Confirmation - Smartcore-KSA'));
+        $FacadesMail = Mail::to($Customer->email)->send(new SendMail($mailData, 'emails.register', env('APP_NAME').' - Email Confirmation'));
 
         Session::put('CustomerToken', $CustomerToken->token);
         return redirect('/store');
