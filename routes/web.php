@@ -42,6 +42,8 @@ Route::post('/register', [RegisterController::class,'submit']);
 Route::get('/forget', [ForgetController::class,'show']);
 Route::post('/forget', [ForgetController::class,'submit']);
 
+Route::get('/verify/email/{token}', [RegisterController::class,'verifyEmail']);
+
 Route::group([
     'middleware'=>'CustomerAuth'
 ],function () {

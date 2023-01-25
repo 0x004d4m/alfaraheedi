@@ -23,6 +23,14 @@ class RegisterController extends Controller
         }
     }
 
+    public function verifyEmail(Request $request, $token){
+        $CustomerEmailVerification = CustomerEmailVerification::where('token', $token)->first();
+        if($CustomerEmailVerification){
+            return view('emails.verified');
+        }
+        return view('emails.notVerified');
+    }
+
     public function submit(Request $request){
         $validator = Validator::make($request->all(),[
             'first_name'=>'required',
@@ -78,6 +86,7 @@ class RegisterController extends Controller
 
         $mailData = [
             'customer_id' => $Customer->id,
+            'customer_id' => $CustomerEmailVerification->token,
         ];
         $FacadesMail = Mail::to($Customer->email)->send(new SendMail($mailData, 'emails.register', 'Email Confirmation - Smartcore-KSA'));
 
