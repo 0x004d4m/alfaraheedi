@@ -527,26 +527,6 @@
                                                                             style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#5C68E2;font-size:26px">#{{$mailData['Order_number']}}</a>&nbsp;{{$mailData['Order']['orderStatus']['name_en']}}!&nbsp;</h2>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-bottom:15px;padding-top:25px">
-                                                                    <!--[if mso]><a href="" target="_blank" hidden>
-                                                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href=""
-                                                                                        style="height:44px; v-text-anchor:middle; width:273px" arcsize="14%" strokecolor="#242e3b" strokeweight="2px" fillcolor="#242e3b">
-                                                                        <w:anchorlock></w:anchorlock>
-                                                                        <center style='color:#ffffff; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:18px; font-weight:400; line-height:18px;  mso-text-raise:1px'>TRACK YOUR ORDER</center>
-                                                                        </v:roundrect></a>
-                                                                    <![endif]-->
-                                                                    <!--[if !mso]><!-- --><span
-                                                                        class="msohide es-button-border"
-                                                                        style="border-style:solid;border-color:#242e3b;background:#5C68E2;border-width:2px;display:inline-block;border-radius:6px;width:auto;mso-hide:all;background-color:#242e3b"><a
-                                                                            href="" class="es-button"
-                                                                            target="_blank"
-                                                                            style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#FFFFFF;font-size:20px;border-style:solid;border-color:#242e3b;border-width:10px 30px 10px 30px;display:inline-block;background:#5C68E2;border-radius:6px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:24px;width:auto;text-align:center;border-left-width:30px;border-right-width:30px;background-color:#242e3b">TRACK
-                                                                            YOUR ORDER</a></span>
-                                                                    <!--<![endif]-->
-                                                                </td>
-                                                            </tr>
                                                         </table>
                                                     </td>
                                                 </tr>
