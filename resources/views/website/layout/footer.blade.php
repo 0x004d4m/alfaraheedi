@@ -54,7 +54,7 @@
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script> All rights reserved by <a href="#" style="color: white"
-                                    target="_blank" rel="nofollow noopener">Smartcore-KSA</a>
+                                    target="_blank" rel="nofollow noopener">{{env('APP_NAME')}}</a>
 
                             </div>
                         </div>

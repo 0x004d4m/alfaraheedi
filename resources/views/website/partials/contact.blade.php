@@ -527,7 +527,7 @@
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-email"></i></span>
                     <div class="media-body">
-                        <h3>info@smartcore-ksa.com</h3>
+                        <h3>{{env('MAIL_EMAIL')}}</h3>
                         <p>{{__('content.Sendusyourqueryanytime')}}</p>
                     </div>
                 </div>

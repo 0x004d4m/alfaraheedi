@@ -24,7 +24,7 @@ return [
     // ----
 
     // Project name. Shown in the window title.
-    'project_name' => 'smartcore-ksa',
+    'project_name' => env('APP_NAME'),
 
     // When clicking on the admin panel's top-left logo/name,
     // where should the user be redirected?
@@ -85,7 +85,7 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo'   => '<b>smartcore</b>-ksa',
+    'project_logo'   => '<b>'.env('APP_NAME').'</b>',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,

@@ -22,7 +22,7 @@
                                             <li><a class="text-white" href="{{ url('/set-language/en') }}">English</a></li>
                                         @endif
                                         <li><a class="text-white" href="tel:+966 5 6444 2238"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-                                        <li><a class="text-white" href="mailto:info@smartcore-ksa.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                        <li><a class="text-white" href="mailto:{{env('MAIL_EMAIL')}}"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                                         @if (Session::has('CustomerToken'))
                                             @php
                                                 $CartItems = App\Models\OrderItem::where('customer_id',App\Models\CustomerToken::where('token', Session::get('CustomerToken'))->first()->customer_id)->whereNull('order_id')->sum('quantity');
