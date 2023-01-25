@@ -563,7 +563,7 @@
                                                                                 <td align="center"
                                                                                     style="padding:0;Margin:0;font-size:0px">
                                                                                     <img class="adapt-img"
-                                                                                        src="{{$orderItem->product->image1}}"
+                                                                                        src="{{url($orderItem->product->image1)}}"
                                                                                         alt
                                                                                         style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
                                                                                         width="70"></td>
