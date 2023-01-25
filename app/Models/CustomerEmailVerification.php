@@ -14,5 +14,6 @@ class CustomerEmailVerification extends Model
     protected $fillable = [
         'token',
         'customer_id',
+        'is_verified',
     ];
 }

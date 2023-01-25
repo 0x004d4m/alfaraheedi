@@ -26,6 +26,9 @@ class RegisterController extends Controller
     public function verifyEmail(Request $request, $token){
         $CustomerEmailVerification = CustomerEmailVerification::where('token', $token)->first();
         if($CustomerEmailVerification){
+            $CustomerEmailVerification->update([
+                'is_verified'=>1
+            ]);
             return view('emails.verified');
         }
         return view('emails.notVerified');
