@@ -1,5 +1,12 @@
 @extends('website.layout.main')
 @section('title', $Product->name)
+@section('styles')
+<style>
+.btn {
+    padding: 0 15px;
+}
+</style>
+@endsection
 @section('content')
 <!--  services-area start-->
 <div class="services-area2">
