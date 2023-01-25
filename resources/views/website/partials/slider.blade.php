@@ -1,5 +1,5 @@
 <!-- slider Area Start-->
-<div class="slider-area" style="background-color: #EDEDED">
+<div class="slider-area" style="background-color: #232f3d">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">

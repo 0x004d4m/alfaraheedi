@@ -14,3 +14,11 @@
 <link rel="stylesheet" href="{{url('template/assets/css/slick.css')}}">
 <link rel="stylesheet" href="{{url('template/assets/css/nice-select.css')}}">
 <link rel="stylesheet" href="{{url('template/assets/css/style.css')}}">
+<style>
+    .btn{
+        background: #242e3b;
+    }
+    .nav-button .nav-tabs .nav-link.active{
+        background: #242e3b;
+    }
+</style>

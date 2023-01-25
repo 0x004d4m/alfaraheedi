@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer-wrappper section-bg">
+    <div class="footer-wrappper section-bg text-white" style="background-color: #374659">
         <div class="footer-area pt-4">
             <div class="container">
                 <div class="row justify-content-between">
@@ -21,7 +21,7 @@
                             <div class="footer-tittle">
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <h4 style="font-weight: 400;">{{__('content.footer')}}</h4>
+                                        <h4 style="font-weight: 400; color:white">{{__('content.footer')}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                 Copyright &copy;
                                 <script>
                                     document.write(new Date().getFullYear());
-                                </script> All rights reserved by <a href="#" style="color: black"
+                                </script> All rights reserved by <a href="#" style="color: white"
                                     target="_blank" rel="nofollow noopener">Smartcore-KSA</a>
 
                             </div>

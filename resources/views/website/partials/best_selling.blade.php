@@ -1,10 +1,10 @@
 <!-- Best Selling start -->
-<div id='best_selling' class="best-selling section-bg">
+<div id='best_selling' class="best-selling section-bg" style="background-color: #374659">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8">
                 <div class="section-tittle text-center mb-55">
-                    <h2>{{__('content.BestSelling')}}</h2>
+                    <h2 class="text-white">{{__('content.BestSelling')}}</h2>
                 </div>
             </div>
         </div>

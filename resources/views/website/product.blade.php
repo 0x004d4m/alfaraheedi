@@ -19,32 +19,32 @@
                 <div class="row" dir="{{__('content.dir')}}">
                     <div class="col-xl-12">
                         <!-- Single -->
-                        <div class="single-services d-flex align-items-center mb-0" style="background-color: #EDEDED;">
+                        <div class="single-services d-flex align-items-center mb-0" style="background-color: #374659;">
                             <div class="features-img" style="width: 20%;" >
                                 <img style="width: 100%;" src="{{url($Product->image1)}}" alt="{{$Product->name}}">
                             </div>
-                            <div class="features-caption text-dark mx-4">
-                                <h3 class="text-dark">{{$Product->name}}</h3>
+                            <div class="features-caption text-white mx-4">
+                                <h3 class="text-white">{{$Product->name}}</h3>
                                 @if ($Product->authour)
                                     <p><span>{{__('content.Authour')}}:</span> {{$Product->authour->name}}</p>
                                 @endif
                                 @if ($Product->stock > 0)
                                     <div class="price">
-                                        <span class="text-dark">{{__('content.InStock')}}</span>
+                                        <span class="text-white">{{__('content.InStock')}}</span>
                                     </div>
                                 @else
                                     <div class="price">
-                                        <span class="text-dark">{{__('content.OutOfStock')}}</span>
+                                        <span class="text-white">{{__('content.OutOfStock')}}</span>
                                     </div>
                                 @endif
                                 <div class="properties-footer d-flex justify-content-between align-items-center">
                                     <div class="price">
-                                        <span class="text-dark">{{$Product->price}} {{__('content.SR')}}</span>
+                                        <span class="text-white">{{$Product->price}} {{__('content.SR')}}</span>
                                     </div>
                                 </div>
                                 <div class="properties-footer d-flex justify-content-between align-items-center">
                                     <div>
-                                        <span class="text-dark">{{__('content.Tax')}}: {{$Product->tax}} %</span>
+                                        <span class="text-white">{{__('content.Tax')}}: {{$Product->tax}} %</span>
                                     </div>
                                 </div>
                                 <form class="d-flex" method="post" action="/cart">
