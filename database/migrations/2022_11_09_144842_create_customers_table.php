@@ -21,7 +21,7 @@ class CreateCustomersTable extends Migration
             $table->string('email')->unique();
             $table->text('password');
             $table->text('address');
-            $table->text('image')->default('/template/assets/img/default.png');
+            $table->string('image')->default('/template/assets/img/default.png');
             $table->timestamps();
             $table->softDeletes();
         });
