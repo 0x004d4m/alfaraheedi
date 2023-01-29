@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('publishers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name_ar');
-            $table->string('name_en');
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        if (!Schema::hasTable('publishers')) {
+            Schema::create('publishers', function (Blueprint $table) {
+                $table->id();
+                $table->string('name_ar');
+                $table->string('name_en');
+                $table->timestamps();
+                $table->softDeletes();
+            });
+        }
     }
 
     /**
