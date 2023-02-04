@@ -9,7 +9,8 @@
                                 <div class="header-info-left d-flex align-items-center">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="#"><img src="{{ url('template/assets/img/logo/logo_PNG2.png') }}"
+                                        <a href="#"><img src="{{ url('template/assets/img/logo/logo2.png') }}"
+                                            width="150px"
                                                 alt=""></a>
                                     </div>
                                     <a> </a>
@@ -45,7 +46,8 @@
                         <div class="col-xl-12">
                             <!-- logo 2 -->
                             <div class="logo2">
-                                <a href="#"><img src="{{ url('template/assets/img/logo/logo_PNG2.png') }}"
+                                <a href="#"><img src="{{ url('template/assets/img/logo/logo2.png') }}"
+                                    width="150px"
                                         alt=""></a>
                             </div>
                             <!-- Main-menu -->

@@ -21,4 +21,38 @@
     .nav-button .nav-tabs .nav-link.active{
         background: #242e3b;
     }
+    .btn::before {
+        background: #374659;
+    }
+
+    .boxed-btn{
+        color: #242e3b !important;
+        border:1px solid #242e3b;
+    }
+    .boxed-btn:hover{
+        color: white !important;
+        border:1px solid #374659;
+        background:#374659;
+    }
+
+    #scrollUp, #back-top{
+        background: #242e3b;
+    }
+    .best-selling .properties:hover .properties-caption h3 a {
+        color: #374659;
+    }
+    .submit-btn3 {
+        background: #374659;
+    }
+    .login-form-area .login-form .login-footer p a {
+        color: #374659;
+    }
+    .register-form-area .register-form .register-footer p a {
+        color: #374659;
+    }
+    .footer-social a:hover {
+        color: #fff;
+        background: #374659;
+        border: 1px solid white;
+    }
 </style>
