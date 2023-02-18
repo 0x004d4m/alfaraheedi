@@ -7,8 +7,7 @@
         @csrf
         <!-- Login Heading -->
         <div class="login-heading">
-            <span>{{__('content.Login')}}</span>
-            <p>{{__('content.Login2')}}</p>
+            <span>{{__('content.ForgotPassword')}}</span>
             @if (Session::has('Error'))
                 <div class="alert alert-danger" role="alert">
                     {{ Session::get('Error') }}
