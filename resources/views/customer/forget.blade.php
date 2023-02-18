@@ -29,8 +29,13 @@
         <!-- Single Input Fields -->
         <div class="input-box">
             <div class="single-input-fields text-end">
-                <label style="text-align: {{__('content.dir2')}};">{{__('content.Password')}}</label>
-                <input type="password" name="password" required placeholder="{{__('content.Password')}}">
+                <label style="text-align: {{__('content.dir2')}};">{{__('content.PhoneorEmailAddress')}}</label>
+                <input type="text" name="username" required placeholder="{{__('content.PhoneorEmailAddress')}}">
+                @isset($Error)
+                    @isset($Error->errors->username)
+                        <small class="text-danger">{{ $Error->errors->username[0] }}</small>
+                    @endisset
+                @endisset
             </div>
         </div>
         <!-- form Footer -->

@@ -18,9 +18,14 @@
                 @endphp
             @endif
         </div>
-        <div class="single-input-fields text-end">
+        <div class="single-input-fields">
             <label style="text-align: {{__('content.dir2')}};">{{__('content.Password')}}</label>
-            <input type="password" name="password" required placeholder="{{__('content.Password')}}">
+            <input required type="password" name="password" placeholder="{{__('content.Password')}}">
+            @isset($Error)
+                @isset($Error->password)
+                    <small class="text-danger">{{ $Error->password[0] }}</small>
+                @endisset
+            @endisset
         </div>
         <!-- form Footer -->
         <div class="login-footer">
