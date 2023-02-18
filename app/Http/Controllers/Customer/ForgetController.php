@@ -58,7 +58,8 @@ class ForgetController extends Controller
             'token' => $CustomerResetPassword->token,
         ];
         $FacadesMail = Mail::to($Customer->email)->send(new SendMail($mailData, 'emails.forget', env('APP_NAME').' - Reset Password'));
-        return view('customer.forget')->with( "OK", 'Check Email' );
+        Session::put('OK', 'Check Email');
+        return view('customer.forget');
     }
 
     public function verifyView(Request $request, $token){
