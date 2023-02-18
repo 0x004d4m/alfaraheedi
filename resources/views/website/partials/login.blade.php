@@ -30,9 +30,9 @@
                 <label style="text-align: {{__('content.dir2')}};">{{__('content.Password')}}</label>
                 <input type="password" name="password" required placeholder="{{__('content.Password')}}">
             </div>
-            {{-- <div class="single-input-fields login-check">
+            <div class="single-input-fields login-check">
                 <a href="/forget" class="f-right">{{__('content.ForgotPassword')}}</a>
-            </div> --}}
+            </div>
         </div>
         <!-- form Footer -->
         <div class="login-footer">

@@ -41,6 +41,8 @@ Route::post('/register', [RegisterController::class,'submit']);
 
 Route::get('/forget', [ForgetController::class,'show']);
 Route::post('/forget', [ForgetController::class,'submit']);
+Route::get('/forget/password/{token}', [ForgetController::class,'verifyView']);
+Route::post('/forget/password/{token}', [ForgetController::class,'verifyPassword']);
 
 Route::get('/verify/email/{token}', [RegisterController::class,'verifyEmail']);
 
