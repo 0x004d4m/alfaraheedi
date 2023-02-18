@@ -17,6 +17,14 @@
                     Session::forget("Error");
                 @endphp
             @endif
+            @if (Session::has('OK'))
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('OK') }}
+                </div>
+                @php
+                    Session::forget("OK");
+                @endphp
+            @endif
         </div>
         <!-- Single Input Fields -->
         <div class="input-box">
