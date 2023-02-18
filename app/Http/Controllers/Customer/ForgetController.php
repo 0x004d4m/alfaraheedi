@@ -8,6 +8,7 @@ use App\Models\Customer;
 use App\Models\CustomerResetPassword;
 use App\Models\CustomerToken;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -68,7 +69,7 @@ class ForgetController extends Controller
         $CustomerResetPassword = CustomerResetPassword::where('token', $token)->first();
         if($CustomerResetPassword){
             $Customer = Customer::where('id',$CustomerResetPassword->customer_id);
-            $Customer->update(['password'=>$request->password]);
+            $Customer->update(['password'=>Hash::make($request->password)]);
             $CustomerResetPassword->delete();
             return redirect('/login');
         }
