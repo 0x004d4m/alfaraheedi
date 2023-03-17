@@ -86,4 +86,8 @@ return [
     'name' => 'Name',
     'card_number' => 'Card Number',
     'SubTotal' => 'Subtotal',
+    'SelectPaymentMethod' => 'Select Payment Method',
+    'cash' => 'Cash',
+    'onlinePayment' => 'Online Payment',
+    'retryPayment' => 'Retry Payment',
 ];

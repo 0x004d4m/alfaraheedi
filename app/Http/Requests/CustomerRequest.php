@@ -27,8 +27,8 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required|min:2|max:255',
-            'last_name' => 'required|min:2|max:255',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => ['required','email',(request()->route('id')==null)?'unique:customers,email':'unique:customers,email,'.request()->route('id')],
             'phone' => ['required',(request()->route('id')==null)?'unique:customers,phone':'unique:customers,phone,'.request()->route('id')],
             'address' => ['required','min:3','max:255'],

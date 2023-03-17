@@ -66,6 +66,27 @@ class OrderCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
+            'name' => 'payment_method',
+            "type"=>'radio',
+            "options"=>[
+                1=>__('content.cash'),
+                2=>__('content.onlinePayment'),
+            ]
+        ]);
+
+        $this->crud->addColumn([
+            'name'     => 'check_payment_result',
+            'label'    => 'Competed Payment',
+            'type'     => 'closure',
+            'function' => function($entry) {
+                if($entry->payment_method==2){
+                    return $entry->check_payment_result?"Yes":"No";
+                }
+                return "Yes";
+            }
+        ]);
+
+        $this->crud->addColumn([
             'name' => 'delivery_price',
             'type' => 'text',
         ]);
@@ -144,6 +165,33 @@ class OrderCrudController extends CrudController
             'entity' => 'driver',
             'attribute' => "full_name",
             'model' => 'App\Models\Driver'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'payment_method',
+            "type"=>'radio',
+            "options"=>[
+                1=>__('content.cash'),
+                2=>__('content.onlinePayment'),
+            ]
+        ]);
+
+        $this->crud->addColumn([
+            'name'     => 'check_payment_result',
+            'label'    => 'Competed Payment',
+            'type'     => 'closure',
+            'function' => function($entry) {
+                if($entry->payment_method==2){
+                    return $entry->check_payment_result?"Yes":"No";
+                }
+                return "Yes";
+            }
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'paymnet_id',
+            'label' => 'Paymnet ID',
+            'type' => 'textarea',
         ]);
 
         $this->crud->addColumn([

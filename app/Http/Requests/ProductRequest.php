@@ -25,13 +25,13 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_ar' => 'required|min:1|max:255',
-            'name_en' => 'required|min:1|max:255',
-            'description_ar' => 'required|min:1|max:255',
-            'description_en' => 'required|min:1|max:255',
-            'price' => 'required|min:1|max:255',
-            'tax' => 'required|min:1|max:255',
-            'isbn' => 'required|min:1|max:255',
+            'name_ar' => 'required',
+            'name_en' => 'required',
+            'description_ar' => 'required',
+            'description_en' => 'required',
+            'price' => 'required',
+            'tax' => 'required',
+            'isbn' => 'required',
             'image1' => 'required',
             'image2' => 'nullable',
             'image3' => 'nullable',

@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
@@ -26,24 +27,9 @@ class OrderController extends Controller
     public function store(Request $request){
         $Setting = Setting::first();
 
-        $Order = Order::create([
-            'order_status_id'=>1,
-            'customer_id'=>$request->customer_id,
-            'driver_id'=>null,
-            'address'=>$request->address,
-            'name'=>$request->name,
-            'card_number'=>$request->card_number,
-            'code'=>$request->discount,
-            'delivery_price'=>0,
-            'total'=>0,
-        ]);
-
         $sum=0;
         $discount=0;
         foreach(OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get() as $OrderItem){
-            $OrderItem->update([
-                'order_id'=>$Order->id
-            ]);
             $Product = Product::where('id', $OrderItem->product_id)->first();
             $stock = $Product->stock - $OrderItem->quantity;
             $Product->update([
@@ -55,6 +41,38 @@ class OrderController extends Controller
             $sum+=$price;
             $discount+=$price2;
         }
+        $payment_id=null;
+        $hyperpay=null;
+        if($request->payment_method==2){
+            $hyperpay = createPayment($sum);
+            $hyperpay_decoded = json_decode($hyperpay);
+            if($hyperpay_decoded->result->code == '000.200.100'){
+                $payment_id= $hyperpay_decoded->id;
+            }else{
+                Session::flash('Error',__('content.retryPayment'));
+                return redirect('/cart');
+            }
+        }
+
+        $Order = Order::create([
+            'order_status_id'=>1,
+            'customer_id'=>$request->customer_id,
+            'driver_id'=>null,
+            'address'=>$request->address,
+            'name'=>$request->name,
+            'card_number'=>$request->card_number,
+            'code'=>$request->discount,
+            'delivery_price'=>0,
+            'total'=>0,
+            'payment_method'=>$request->payment_method,
+            'paymnet_id'=>$payment_id,
+            'prepare_checkout_result'=>$hyperpay,
+        ]);
+        foreach(OrderItem::where('customer_id',$request->customer_id)->whereNull('order_id')->get() as $OrderItem){
+            $OrderItem->update([
+                'order_id'=>$Order->id
+            ]);
+        }
 
         $Order->update([
             'discount'=>$discount,
@@ -64,6 +82,43 @@ class OrderController extends Controller
         Session::forget('discount');
         Session::forget('name');
         Session::forget('card_number');
+
+        if($request->payment_method==2){
+            return redirect("order/$Order->id/pay");
+        }
+        return redirect('/order');
+    }
+
+    public function pay(Request $request, $id){
+        $Order = Order::where('id', $id)->first();
+        return view('customer.pay',[
+            "Order"=>$Order,
+        ]);
+    }
+
+    public function pay2(Request $request, $id){
+        $Order = Order::where('id', $id)->first();
+        if($Order->status==0 && $Order->check_payment_result == null){
+            $hyperpay_decoded = json_decode($Order->prepare_checkout_result);
+
+            $checkpayment =  checkPayment($hyperpay_decoded->id);
+            $checkpayment_decoded =  json_decode($checkpayment);
+
+            if(
+                $checkpayment_decoded->result->code == '000.100.110'
+                &&
+                $hyperpay_decoded->id == $request->id
+            ){
+                $Order->update([
+                    'check_payment_result' => $checkpayment
+                ]);
+                return redirect('/order');
+            }else{
+                return back();
+            }
+        }else{
+            return redirect('/order');
+        }
         return redirect('/order');
     }
 

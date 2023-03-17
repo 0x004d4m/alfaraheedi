@@ -52,6 +52,8 @@ Route::group([
     Route::resource('/cart', CartController::class);
     Route::post('/checkCode', [CartController::class,'checkDiscount']);
     Route::resource('/order', OrderController::class);
+    Route::get('/order/{id}/pay', [OrderController::class,'pay']);
+    Route::get('/order/{id}/pay2', [OrderController::class,'pay2']);
     Route::get('/logout', [LogoutController::class,'submit']);
 });
 

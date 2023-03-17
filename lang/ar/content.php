@@ -86,4 +86,8 @@ return [
     'name' => 'الاسم',
     'card_number' => 'رقم البطاقة',
     'SubTotal' => 'السعر المبدأي',
+    'SelectPaymentMethod' => 'اختر طريقة الدفع',
+    'cash' => 'دفع عند الاستلام',
+    'onlinePayment' => 'بوابة الدفع الالكتروني',
+    'retryPayment' => 'اعد المحاولة',
 ];

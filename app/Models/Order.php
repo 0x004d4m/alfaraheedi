@@ -34,6 +34,10 @@ class Order extends Model
         'discount',
         'name',
         'card_number',
+        'payment_method',
+        'paymnet_id',
+        'prepare_checkout_result',
+        'check_payment_result',
     ];
     // protected $hidden = [];
     // protected $dates = [];
