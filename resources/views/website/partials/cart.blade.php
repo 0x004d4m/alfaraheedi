@@ -123,7 +123,9 @@
                                     @endif
                                     <div class="shipping_box">
                                         <b class="text-dark">{{__('content.SelectPaymentMethod')}}:</b>
+                                        <br>
                                         <label for="cash">{{__('content.cash')}}</label> <input id="cash" type="radio" name="payment_method" value="1" checked form="Checkout">
+                                        <br>
                                         <label for="onlinePayment">{{__('content.onlinePayment')}}</label> <input id="onlinePayment" type="radio" name="payment_method" value="2" form="Checkout"><br><br>
                                     </div>
                                 @else
