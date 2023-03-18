@@ -59,3 +59,6 @@
         </ul>
     </li>
 @endif
+@if(backpack_user()->can('View Logo'))
+    <li class="nav-item"><a class="nav-link" href="{{ backpack_url('logo') }}"><i class="nav-icon la la-question"></i> Logos</a></li>
+@endif

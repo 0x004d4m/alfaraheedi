@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
+    'namespace'  => 'App\Http\Controllers\Admin',
+], function () { // custom admin routes
+    Route::get('db/change', 'DbController@change');
+}); // this should be the absolute last line of this file
+Route::group([
+    'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => array_merge(
         (array) config('backpack.base.web_middleware', 'web'),
         (array) config('backpack.base.middleware_key', 'admin')
@@ -31,10 +37,5 @@ Route::group([
     Route::crud('setting', 'SettingCrudController');
     Route::crud('discount', 'DiscountCrudController');
     Route::crud('db', 'DbCrudController');
-}); // this should be the absolute last line of this file
-Route::group([
-    'prefix'     => config('backpack.base.route_prefix', 'admin'),
-    'namespace'  => 'App\Http\Controllers\Admin',
-], function () { // custom admin routes
-    Route::get('db/change', 'DbController@change');
+    Route::crud('logo', 'LogoCrudController');
 }); // this should be the absolute last line of this file

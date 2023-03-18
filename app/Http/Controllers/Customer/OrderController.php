@@ -36,7 +36,7 @@ class OrderController extends Controller
                 'stock'=>($stock<0)?0:$stock
             ]);
 
-            $price = ($OrderItem->quantity * $OrderItem->price + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100)));
+            $price = ($OrderItem->quantity * $OrderItem->price); // + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100))
             $price2 = ($OrderItem->quantity * ($OrderItem->price * $OrderItem->discount_value/100));
             $sum+=$price;
             $discount+=$price2;

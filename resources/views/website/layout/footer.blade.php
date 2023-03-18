@@ -8,11 +8,9 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo mb-25">
-                                    <a href="#"><img src="{{ url('template/assets/img/logo/logo2.png') }}"width="150px"
+                                    <a href="#"><img src="{{ url(App\Models\Logo::where('id',2)->first()->image) }}"width="150px"
                                             alt=""></a>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -54,8 +52,9 @@
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script> All rights reserved by <a href="#" style="color: white"
-                                    target="_blank" rel="nofollow noopener">{{env('APP_NAME')}}</a>
-
+                                    target="_blank" rel="nofollow noopener">{{env('APP_NAME')}}</a>.
+                                <br>
+                                {{__('content.trusted')}}
                             </div>
                         </div>
                     </div>

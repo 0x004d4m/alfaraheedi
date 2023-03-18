@@ -9,7 +9,7 @@
                                 <div class="header-info-left d-flex align-items-center">
                                     <!-- logo -->
                                     <div class="logo">
-                                        <a href="#"><img src="{{ url('template/assets/img/logo/logo2.png') }}"
+                                        <a href="#"><img src="{{ url(App\Models\Logo::where('id',1)->first()->image) }}"
                                             width="150px"
                                                 alt=""></a>
                                     </div>
@@ -46,7 +46,7 @@
                         <div class="col-xl-12">
                             <!-- logo 2 -->
                             <div class="logo2">
-                                <a href="#"><img src="{{ url('template/assets/img/logo/logo2.png') }}"
+                                <a href="#"><img src="{{ url(App\Models\Logo::where('id',1)->first()->image) }}"
                                     width="150px"
                                         alt=""></a>
                             </div>

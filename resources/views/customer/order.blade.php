@@ -61,7 +61,7 @@
                             @endphp
                             @foreach ($Order->orderItems as $OrderItem)
                                 @php
-                                    $price = ($OrderItem->quantity * $OrderItem->price + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100)));
+                                    $price = ($OrderItem->quantity * $OrderItem->price); //  + ( $OrderItem->quantity * ($OrderItem->price * $OrderItem->tax/100))
                                     $price2 = ($OrderItem->quantity * ($OrderItem->price * $OrderItem->discount_value/100));
                                 @endphp
                                 <tr>

@@ -90,4 +90,5 @@ return [
     'cash' => 'Cash',
     'onlinePayment' => 'Online Payment',
     'retryPayment' => 'Retry Payment',
+    'trusted' => 'This website is trusted by Marouf platform with identification number 269931',
 ];
