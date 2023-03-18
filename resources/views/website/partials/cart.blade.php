@@ -117,14 +117,18 @@
                             <td></td>
                             <td></td>
                             <td>
-                                @if (Session::has('Error'))
-                                    <small class="text-danger">{{Session::get('Error')}}</small>
+                                @if (env('HAS_ONLINE_PAYMENT')==true)
+                                    @if (Session::has('Error'))
+                                        <small class="text-danger">{{Session::get('Error')}}</small>
+                                    @endif
+                                    <div class="shipping_box">
+                                        <b class="text-dark">{{__('content.SelectPaymentMethod')}}:</b>
+                                        <label for="cash">{{__('content.cash')}}</label> <input id="cash" type="radio" name="payment_method" value="1" checked form="Checkout">
+                                        <label for="onlinePayment">{{__('content.onlinePayment')}}</label> <input id="onlinePayment" type="radio" name="payment_method" value="2" form="Checkout"><br><br>
+                                    </div>
+                                @else
+                                    <input type="hidden" name="payment_method" value="1" form="Checkout">
                                 @endif
-                                <div class="shipping_box">
-                                    <b class="text-dark">{{__('content.SelectPaymentMethod')}}:</b>
-                                    <label for="cash">{{__('content.cash')}}</label> <input id="cash" type="radio" name="payment_method" value="1" checked form="Checkout">
-                                    <label for="onlinePayment">{{__('content.onlinePayment')}}</label> <input id="onlinePayment" type="radio" name="payment_method" value="2" form="Checkout"><br><br>
-                                </div>
                                 <div class="shipping_box">
                                     <label>{{__('content.Address')}}</label>
                                     <input class="post_code" type="text" placeholder="{{__('content.Address')}}" name="address" value="{{$Address}}" form="Checkout"/>
