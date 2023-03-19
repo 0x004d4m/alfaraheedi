@@ -126,20 +126,20 @@ class ProductCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'price',
-            'type' => 'number',
+            'type' => 'text',
             'label' => 'Price',
         ]);
 
         $this->crud->addField([
             'name' => 'tax',
-            'type' => 'number',
+            'type' => 'text',
             'label' => 'Tax',
             'suffix' => '%',
         ]);
 
         $this->crud->addField([
             'name' => 'stock',
-            'type' => 'number',
+            'type' => 'text',
             'label' => 'Stock',
         ]);
 
